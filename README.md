@@ -4,7 +4,7 @@ The official website for Carleton's Artificial Intelligence Society (CAIS). This
 
 ## Tech Stack
 
-- **Framework**: Next.js 14
+- **Framework**: Next.js 14 (App Router)
 - **Styling**: TailwindCSS
 - **Package Manager**: pnpm
 - **Deployment**: GitHub Pages
@@ -41,6 +41,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - Features: `feature/name`
   - Bugfixes: `bugfix/name`
   - Upgrade: `upgrade/name`
+
+- **Branching Strategy**:
+  - Main branch: Protected, requires pull request reviews
+  - Feature branches: Created for specific features or sections
+    - `feature/setup-initial-routes`: Initial page structure and routing
+    - `feature/hero-section`: Hero section development
+  - Create new feature branches for major components or sections
+  - Keep changes focused and atomic
 
 - **Code Quality**:
   - ESLint for code linting
