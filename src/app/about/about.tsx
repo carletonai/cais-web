@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const AboutPage = () => (
   <div className="min-h-screen p-8">
@@ -8,4 +8,5 @@ const AboutPage = () => (
     </p>
   </div>
 );
+
 export default AboutPage;

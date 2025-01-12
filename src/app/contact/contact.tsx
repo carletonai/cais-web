@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ContactPage = () => (
   <div className="min-h-screen p-8">

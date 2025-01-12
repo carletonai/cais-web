@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TeamPage correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen p-8"
+  >
+    <h1
+      class="text-4xl font-bold mb-6"
+    >
+      Our Team
+    </h1>
+    <p
+      class="text-lg"
+    >
+      Meet the dedicated members of CAIS's.
+    </p>
+  </div>
+</DocumentFragment>
+`;
