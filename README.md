@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CAIS Website
+
+The official website for Carleton's Artificial Intelligence Society (CAIS). This project aims to create a modern, responsive web platform for our AI/ML community at Carleton University.
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Styling**: TailwindCSS
+- **Package Manager**: pnpm
+- **Deployment**: GitHub Pages
+- **CI/CD**: GitHub Actions
+
+## Prerequisites
+
+- Node.js 18 or later
+- pnpm (recommended for better performance and disk space efficiency)
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/carletonai/cais-web.git
+cd cais-web
+```
+
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Run the development server:
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development Guidelines
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Branch Naming Convention**: 
+  - Features: `feature/name`
+  - Bugfixes: `bugfix/name`
+  - Upgrade: `upgrade/name`
 
-## Learn More
+- **Code Quality**:
+  - ESLint for code linting
+  - Prettier for code formatting
+  - Jest for testing
 
-To learn more about Next.js, take a look at the following resources:
+## Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev          # Start development server
+pnpm build        # Build for production
+pnpm serve        # Start production server
+pnpm test         # Run tests
+pnpm lint         # Run linting
+pnpm format       # Check formatting
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+1. Fork the repository
+2. Create your feature branch following the naming convention
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/          # App router pages and layouts
+│   ├── page.tsx        # Home page (root route)
+│   ├── about/         # About CAIS page
+│   ├── events/        # Events and activities page
+│   ├── team/          # Team members page
+│   ├── projects/      # Projects showcase page
+│   └── contact/       # Contact information page
+├── components/   # Reusable UI components
+├── lib/          # Utility functions and shared logic
+└── styles/       # Global styles and Tailwind config
+```
+
+### Pages Description
+
+- **Home (/)**: Landing page showcasing CAIS's mission and latest updates
+- **About (/about)**: Information about CAIS, our history, mission, and values
+- **Events (/events)**: Upcoming and past events, workshops, and activities
+- **Team (/team)**: Meet our executive team and contributors
+- **Projects (/projects)**: Showcase of current and past projects
+- **Contact (/contact)**: Get in touch with CAIS
+
+## Team
+
+This project is maintained by the CAIS development team. For any questions or concerns, please open an issue or reach out to the team on Discord.
+
+## License
+
+[MIT License](LICENSE)
