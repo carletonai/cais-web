@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Projects page correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen p-8"
+  >
+    <h1
+      class="text-4xl font-bold mb-6"
+    >
+      Projects
+    </h1>
+    <p
+      class="text-lg"
+    >
+      Explore the innovative projects developed by CAIS' members.
+    </p>
+  </div>
+</DocumentFragment>
+`;
