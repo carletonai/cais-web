@@ -18,17 +18,20 @@ The official website for Carleton's Artificial Intelligence Society (CAIS). This
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/carletonai/cais-web.git
 cd cais-web
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 pnpm dev
 ```
@@ -37,12 +40,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Development Guidelines
 
-- **Branch Naming Convention**: 
+- **Branch Naming Convention**:
+
   - Features: `feature/name`
   - Bugfixes: `bugfix/name`
   - Upgrade: `upgrade/name`
 
 - **Branching Strategy**:
+
   - Main branch: Protected, requires pull request reviews
   - Feature branches: Created for specific features or sections
     - `feature/setup-initial-routes`: Initial page structure and routing
