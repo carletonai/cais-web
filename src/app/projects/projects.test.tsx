@@ -1,7 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import Projects from "./projects";
-test("renders Projects page correctly", () => {
-  const { asFragment } = render(<Projects />);
+import React from 'react';
+import { render } from '@testing-library/react';
+import ProjectsPage from './projects';
+
+test('renders ProjectsPage correctly', () => {
+  const { asFragment } = render(<ProjectsPage />);
   expect(asFragment()).toMatchSnapshot();
 });
+

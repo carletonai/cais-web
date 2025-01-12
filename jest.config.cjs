@@ -8,5 +8,6 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/__mocks__/fileMock.js",
   },
-  testMatch: ["<rootDir>/src/components/**/*.test.jsx"],
+  testMatch: ["<rootDir>/src/{components|app}**/*.{test|spec}.{ts|tsx}"],
+  //testPathIgnorePatterns: ["/node_modules/", "<rootDir>/src/app/", "<rootDir>/src/main.tsx"],
 };

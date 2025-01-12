@@ -1,7 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import Events from "./events";
-test("renders Events page correctly", () => {
-  const { asFragment } = render(<Events />);
+import React from 'react';
+import { render } from '@testing-library/react';
+import EventsPage from './events';
+
+test('renders EventsPage correctly', () => {
+  const { asFragment } = render(<EventsPage />);
   expect(asFragment()).toMatchSnapshot();
 });
+
