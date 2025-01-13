@@ -1,6 +1,6 @@
 <div> 
   <h3 align="center">
-    <img src="public/club.png">
+    <img src="public/club.png" style="width: 200px; height: auto">
   </h3>
   <h6 align="center">The official <i>Carleton Artificial Intelligence Society</i> <a href="https://carletonai.github.io/cais-web/">Website</a></h6>
   <h6 align="center">
