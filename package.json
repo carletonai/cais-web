@@ -4,9 +4,9 @@
   "private": true,
   "description": "A project for CAIS club website.",
   "type": "module",
-  "homepage": "https://carletonai.github.io/carletonai.github.io",
+  "homepage": "https://carletonai.github.io/cais-web",
   "scripts": {
-    "serve": "vite preview ",
+    "serve": "vite preview",
     "dev": "vite",
     "build": "vite build",
     "test": "jest",
@@ -17,7 +17,7 @@
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "fix": "pnpm lint && pnpm format",
-    "predeploy": "pnpm fix && pnpm build",
+    "predeploy": "pnpm build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
