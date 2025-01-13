@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-[#1a2238] text-gray-200">
         <Navbar />
         <main className="pt-16 max-w-7xl mx-auto px-4 sm:px-6">
           <Routes>
