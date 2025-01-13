@@ -5,6 +5,7 @@ import Projects from "./projects/projects";
 import Events from "./events/events";
 import Contact from "./contact/contact";
 import Team from "./team/team";
+import HomePage from "./home/home";
 import Navbar from "../components/Navbar";
 
 const App = () => {
@@ -19,8 +20,8 @@ const App = () => {
             <Route path="/cais-web/events" element={<Events />} />
             <Route path="/cais-web/contact" element={<Contact />} />
             <Route path="/cais-web/team" element={<Team />} />
-            <Route path="/cais-web/" element={<About />} />
-            <Route path="*" element={<About />} />
+            <Route path="/cais-web/" element={<HomePage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
       </div>
