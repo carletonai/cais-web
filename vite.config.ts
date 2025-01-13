@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/carletonai.github.io/",
   css: {
-    postcss: './postcss.config.cjs'
-  }
+    postcss: "./postcss.config.cjs",
+  },
 });

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavItem {
   label: string;
@@ -8,52 +8,53 @@ interface NavItem {
 
 const THEME = {
   colors: {
-    primary: 'red',
+    primary: "red",
     text: {
-      default: 'gray-700',
-      hover: 'red-600',
+      default: "gray-700",
+      hover: "red-600",
     },
     background: {
-      default: 'white',
-      hover: 'gray-50',
+      default: "white",
+      hover: "gray-50",
     },
     border: {
-      active: 'red-600',
-      hover: 'red-300',
+      active: "red-600",
+      hover: "red-300",
     },
   },
   spacing: {
-    navHeight: '16',
-    mobileMenuPadding: '3',
+    navHeight: "16",
+    mobileMenuPadding: "3",
   },
 };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Events', path: '/events' },
-  { label: 'Team', path: '/team' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Contact', path: '/contact' },
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Events", path: "/events" },
+  { label: "Team", path: "/team" },
+  { label: "Projects", path: "/projects" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const STYLES = {
   nav: "bg-white shadow-md",
   container: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
   innerContainer: "flex justify-between h-16",
-  
+
   logoContainer: "flex-shrink-0 flex items-center",
   logoText: `text-xl font-bold text-${THEME.colors.primary}-600 hover:text-${THEME.colors.primary}-700`,
-  
+
   desktopNav: "hidden sm:ml-6 sm:flex sm:space-x-8",
   desktopLink: (isActive: boolean) => `
     inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium
-    ${isActive 
-      ? `border-${THEME.colors.border.active} text-${THEME.colors.text.hover}`
-      : `border-transparent text-${THEME.colors.text.default} hover:text-${THEME.colors.text.hover} hover:border-${THEME.colors.border.hover}`
+    ${
+      isActive
+        ? `border-${THEME.colors.border.active} text-${THEME.colors.text.hover}`
+        : `border-transparent text-${THEME.colors.text.default} hover:text-${THEME.colors.text.hover} hover:border-${THEME.colors.border.hover}`
     }
   `,
-  
+
   mobileMenuButton: `
     inline-flex items-center justify-center p-2 rounded-md 
     text-${THEME.colors.text.default} 
@@ -65,9 +66,10 @@ const STYLES = {
   mobileMenuInner: "pt-2 pb-3 space-y-1",
   mobileLink: (isActive: boolean) => `
     block pl-3 pr-4 py-2 border-l-4 text-base font-medium
-    ${isActive
-      ? `bg-${THEME.colors.primary}-50 border-${THEME.colors.border.active} text-${THEME.colors.text.hover}`
-      : `border-transparent text-${THEME.colors.text.default} hover:bg-${THEME.colors.background.hover} hover:border-${THEME.colors.border.hover} hover:text-${THEME.colors.text.hover}`
+    ${
+      isActive
+        ? `bg-${THEME.colors.primary}-50 border-${THEME.colors.border.active} text-${THEME.colors.text.hover}`
+        : `border-transparent text-${THEME.colors.text.default} hover:bg-${THEME.colors.background.hover} hover:border-${THEME.colors.border.hover} hover:text-${THEME.colors.text.hover}`
     }
   `,
 };
@@ -127,7 +129,7 @@ export default function Navbar() {
     </div>
   );
 
-  const MobileMenu = () => (
+  const MobileMenu = () =>
     isMobileMenuOpen && (
       <div className={STYLES.mobileMenuContainer} id="mobile-menu">
         <div className={STYLES.mobileMenuInner}>
@@ -143,8 +145,7 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-    )
-  );
+    );
 
   return (
     <nav className={STYLES.nav}>
@@ -160,4 +161,4 @@ export default function Navbar() {
       <MobileMenu />
     </nav>
   );
-} 
+}
