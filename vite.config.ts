@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/carletonai.github.io/",
+  base: "/cais-web/",
   css: {
     postcss: './postcss.config.cjs'
   }
