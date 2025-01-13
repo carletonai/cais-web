@@ -27,7 +27,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/cais-web/" className="flex items-center group">
               <img 
-                src="/cais-web/transparent-club.png" 
+                src="/cais-web/header-club.png" 
                 alt="CAIS Logo" 
                 className="h-8 w-auto transition-transform duration-300 group-hover:scale-110"
               />
