@@ -88,29 +88,24 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <div
-          className="sm:hidden bg-[#1a2238]/95 backdrop-blur-sm border-t border-red-500/10"
-          id="mobile-menu"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-all duration-300 ${
-                  location.pathname === item.path
-                    ? "text-red-400 bg-red-500/10"
-                    : "text-gray-300 hover:text-red-400 hover:bg-red-500/5"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+      <div data-testid="mobile-menu" className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`block px-3 py-2 text-base font-medium rounded-md transition-all duration-300 ${
+                location.pathname === item.path
+                  ? "text-red-400 bg-red-500/10"
+                  : "text-gray-300 hover:text-red-400 hover:bg-red-500/5"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }
