@@ -4,7 +4,7 @@ The official website for Carleton's Artificial Intelligence Society (CAIS). This
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Vite + React + TypeScript
 - **Styling**: TailwindCSS
 - **Package Manager**: pnpm
 - **Deployment**: GitHub Pages
@@ -36,7 +36,7 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
 ## Development Guidelines
 
@@ -83,15 +83,10 @@ pnpm format       # Check formatting
 
 ```
 src/
-├── app/          # App router pages and layouts
-│   ├── page.tsx        # Home page (root route)
-│   ├── about/         # About CAIS page
-│   ├── events/        # Events and activities page
-│   ├── team/          # Team members page
-│   ├── projects/      # Projects showcase page
-│   └── contact/       # Contact information page
 ├── components/   # Reusable UI components
-├── lib/          # Utility functions and shared logic
+├── app/          # Main application code
+│   └── App.tsx   # Root application component
+├── assets/       # Static assets
 └── styles/       # Global styles and Tailwind config
 ```
 
