@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from "react-social-icons";
 
 const SOCIAL_LINKS = [
   "https://www.instagram.com/carletonaisociety/",
   "https://discord.gg/nsvsMJaSRJ",
   "https://www.linkedin.com/company/carleton-ai",
-  "https://www.youtube.com/channel/UCWKRnTa68hlHrW6WYCgCNaw"
+  "https://www.youtube.com/channel/UCWKRnTa68hlHrW6WYCgCNaw",
 ];
 
 interface ActionButton {
@@ -22,7 +22,13 @@ interface HeroProps {
   secondaryAction?: ActionButton;
 }
 
-export default function Hero({ title, description, logoSrc, primaryAction, secondaryAction }: HeroProps) {
+export default function Hero({
+  title,
+  description,
+  logoSrc,
+  primaryAction,
+  secondaryAction,
+}: HeroProps) {
   return (
     <div className="min-h-screen w-full bg-[#1a2238] overflow-hidden">
       {/* Background gradients - positioned relative to viewport */}
@@ -34,18 +40,18 @@ export default function Hero({ title, description, logoSrc, primaryAction, secon
         {/* Accent glow - bottom left */}
         <div className="absolute bottom-[10%] -left-[5%] w-[70vw] h-[40vh] rounded-[100%] bg-purple-500/5 blur-3xl"></div>
       </div>
-      
+
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-center">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             {/* Logo with enhanced animation */}
-            <img 
+            <img
               src={logoSrc}
-              alt="CAIS Logo" 
+              alt="CAIS Logo"
               className="h-32 md:h-40 lg:h-48 mx-auto mb-8 animate-fadeIn duration-1000"
             />
-            
+
             {/* Title and Description with clearer animations */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeIn animate-delay-300 duration-1000">
               {title}
@@ -53,11 +59,11 @@ export default function Hero({ title, description, logoSrc, primaryAction, secon
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-fadeIn animate-delay-500 duration-1000">
               {description}
             </p>
-            
+
             {/* Social Icons with smoother animation */}
             <div className="flex justify-center gap-4 mb-12 animate-fadeIn animate-delay-700 duration-1000">
               {SOCIAL_LINKS.map((url) => (
-                <SocialIcon 
+                <SocialIcon
                   key={url}
                   url={url}
                   target="_blank"
@@ -94,4 +100,4 @@ export default function Hero({ title, description, logoSrc, primaryAction, secon
       </div>
     </div>
   );
-} 
+}

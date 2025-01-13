@@ -1,9 +1,11 @@
-
-<div> 
+<!--
   <h3 align="center">
     <img src="public/club.png" style="width: 500px; height: auto">
   </h3>
-  <span> </span>
+-->
+
+<span> </span>
+
   <h6 align="center">The official <i>Carleton Artificial Intelligence Society</i> <a href="https://carletonai.github.io/cais-web/">Website</a></h6>
   <h6 align="center">
     <img src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220">
@@ -19,8 +21,8 @@
 ---
 
 <div>
-  <h3 align="center">CAIS Website</h2>
-  <p>
+  <h3 align="center">CAIS Website</h3>
+  <p align="center">
     This project aims to create a modern, responsive web platform for our AI/ML community at <a href="https://carleton.ca/"> Carleton University</a>.
   </p>
 </div>
@@ -29,7 +31,7 @@
 
 <div>
   <h3 align="center">Team</h3>
-  <p>
+  <p align="center">
     This project is maintained by the CAIS development team. For any questions or concerns, please open an issue or reach out to the team on <a href="https://discord.gg/nsvsMJaSRJ">Discord</a>. 
   </p>
 </div>
@@ -38,14 +40,13 @@
 
 <div>
   <h3 align="center">Contribution</h3>
-  <p>
-    This project is open to work on, vist <a href="CONTRIBUTING.md">CONTRIBUTING</a> to get started.
+  <p align="center">
+    This project is open to work on, visit <a href="CONTRIBUTING.md">CONTRIBUTING</a> to get started.
   </p>
 </div>
 
 ---
 
 <div>
-  <h3 align="center" >This project is under the MIT <a href="LICENSE">License</a></h3>
+  <h3 align="center">This project is under the MIT <a href="LICENSE">License</a></h3>
 </div>
-

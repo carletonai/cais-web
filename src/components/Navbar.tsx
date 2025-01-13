@@ -26,9 +26,9 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/cais-web/" className="flex items-center group">
-              <img 
-                src="/cais-web/header-club.png" 
-                alt="CAIS Logo" 
+              <img
+                src="/cais-web/header-club.png"
+                alt="CAIS Logo"
                 className="h-8 w-auto transition-transform duration-300 group-hover:scale-110"
               />
             </Link>
@@ -47,9 +47,13 @@ export default function Navbar() {
                 }`}
               >
                 {item.label}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left transition-transform duration-300 ${
-                  location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                }`}></span>
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform origin-left transition-transform duration-300 ${
+                    location.pathname === item.path
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                ></span>
               </Link>
             ))}
           </div>
@@ -85,7 +89,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden bg-[#1a2238]/95 backdrop-blur-sm border-t border-red-500/10" id="mobile-menu">
+        <div
+          className="sm:hidden bg-[#1a2238]/95 backdrop-blur-sm border-t border-red-500/10"
+          id="mobile-menu"
+        >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {NAV_ITEMS.map((item) => (
               <Link

@@ -9,12 +9,12 @@ export default function HomePage() {
       logoSrc="/cais-web/header-club.png"
       primaryAction={{
         text: "See Events",
-        to: "/cais-web/events"
+        to: "/cais-web/events",
       }}
       secondaryAction={{
         text: "Learn More",
-        to: "/cais-web/about"
+        to: "/cais-web/about",
       }}
     />
   );
-} 
+}
