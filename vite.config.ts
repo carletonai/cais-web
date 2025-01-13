@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/cais-web/",
   css: {
-    postcss: './postcss.config.cjs'
-  }
+    postcss: "./postcss.config.cjs",
+  },
 });

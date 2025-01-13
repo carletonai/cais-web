@@ -3,7 +3,6 @@ import { render } from "@testing-library/react";
 import AboutPage from "./about";
 
 test("renders AboutPage correctly", () => {
-  const { asFragment } = render(<AboutPage />)
+  const { asFragment } = render(<AboutPage />);
   expect(asFragment()).toMatchSnapshot();
 });
-
