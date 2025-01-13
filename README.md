@@ -1,8 +1,7 @@
-<!--
-  <h3 align="center">
-    <img src="public/club.png" style="width: 500px; height: auto">
-  </h3>
--->
+<h3 align="center">
+  <img src="public/transparent-club.png" style="width: 100; height: auto">
+</h3>
+
 
 <span> </span>
 
