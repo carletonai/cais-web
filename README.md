@@ -37,9 +37,9 @@
 ---
 
 <div>
-  <h3 align="center">Contributing</h3>
+  <h3 align="center">Contribution</h3>
   <p>
-    This project is open to work on, vist <a href="CONTRIBUTING">CONTRIBUTING</a> to get started.
+    This project is open to work on, vist <a href="CONTRIBUTING.md">CONTRIBUTING</a> to get started.
   </p>
 </div>
 
