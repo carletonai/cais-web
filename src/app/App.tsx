@@ -14,12 +14,13 @@ const App = () => {
         <Navbar />
         <main className="pt-16 max-w-7xl mx-auto px-4 sm:px-6">
           <Routes>
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/" element={<About />} />
+            <Route path="/cais-web/about" element={<About />} />
+            <Route path="/cais-web/projects" element={<Projects />} />
+            <Route path="/cais-web/events" element={<Events />} />
+            <Route path="/cais-web/contact" element={<Contact />} />
+            <Route path="/cais-web/team" element={<Team />} />
+            <Route path="/cais-web/" element={<About />} />
+            <Route path="*" element={<About />} />
           </Routes>
         </main>
       </div>

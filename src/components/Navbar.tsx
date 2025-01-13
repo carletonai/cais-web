@@ -29,12 +29,12 @@ const THEME = {
 };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Events", path: "/events" },
-  { label: "Team", path: "/team" },
-  { label: "Projects", path: "/projects" },
-  { label: "Contact", path: "/contact" },
+  { label: "Home", path: "/cais-web/" },
+  { label: "About", path: "/cais-web/about" },
+  { label: "Events", path: "/cais-web/events" },
+  { label: "Team", path: "/cais-web/team" },
+  { label: "Projects", path: "/cais-web/projects" },
+  { label: "Contact", path: "/cais-web/contact" },
 ];
 
 const STYLES = {
