@@ -32,17 +32,13 @@ describe('Navbar Component', () => {
     renderNavbar();
     const menuButton = screen.getByRole('button', { name: /open main menu/i });
     
-    // Menu should be hidden initially
     expect(screen.queryByRole('navigation', { name: /mobile/i })).not.toBeInTheDocument();
     
-    // Click menu button
     fireEvent.click(menuButton);
     
-    // Menu should be visible
     const mobileMenu = screen.getByTestId('mobile-menu');
     expect(mobileMenu).toBeInTheDocument();
     
-    // Click again to close
     fireEvent.click(menuButton);
     expect(screen.queryByRole('navigation', { name: /mobile/i })).not.toBeInTheDocument();
   });
@@ -51,14 +47,11 @@ describe('Navbar Component', () => {
     renderNavbar();
     const menuButton = screen.getByRole('button', { name: /open main menu/i });
     
-    // Open menu
     fireEvent.click(menuButton);
     
-    // Click a link
-    const aboutLink = screen.getAllByText('About')[1]; // Get mobile menu link
+    const aboutLink = screen.getAllByText('About')[1];
     fireEvent.click(aboutLink);
     
-    // Menu should be closed
     expect(screen.queryByRole('navigation', { name: /mobile/i })).not.toBeInTheDocument();
   });
 }); 

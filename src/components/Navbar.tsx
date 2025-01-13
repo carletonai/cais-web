@@ -23,7 +23,6 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1a2238]/95 backdrop-blur-sm border-b border-red-500/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center">
             <Link to="/cais-web/" className="flex items-center group">
               <img
@@ -34,7 +33,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden sm:flex sm:items-center sm:space-x-1">
             {NAV_ITEMS.map((item) => (
               <Link
@@ -58,7 +56,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center sm:hidden">
             <button
               type="button"
@@ -87,7 +84,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div data-testid="mobile-menu" className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {NAV_ITEMS.map((item) => (
