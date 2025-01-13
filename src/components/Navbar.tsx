@@ -84,7 +84,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div data-testid="mobile-menu" className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
+      <div
+        data-testid="mobile-menu"
+        className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden`}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {NAV_ITEMS.map((item) => (
             <Link

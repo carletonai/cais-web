@@ -10,5 +10,5 @@ module.exports = {
     "^react-social-icons$": "<rootDir>/__mocks__/react-social-icons.js",
   },
   testMatch: ["<rootDir>/src/**/*.{test,spec}.{ts,tsx}"],
-  setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"]
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
 };

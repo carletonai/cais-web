@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
 
 const SOCIAL_LINKS = [
   "https://www.instagram.com/carletonaisociety/",
@@ -22,6 +23,28 @@ interface HeroProps {
   secondaryAction?: ActionButton;
 }
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 1.2,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
 export default function Hero({
   title,
   description,
@@ -31,6 +54,9 @@ export default function Hero({
 }: HeroProps) {
   const [displayText, setDisplayText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const words = title.split(" ").map(word => 
+    word.toLowerCase() === "ai" ? "ΛI" : word
+  );
 
   useEffect(() => {
     let currentText = "";
@@ -53,66 +79,173 @@ export default function Hero({
   return (
     <div className="min-h-screen w-full bg-[#1a2238] overflow-hidden">
       <div className="fixed inset-0">
-        <div className="absolute -top-[10%] -left-[20%] w-[100vw] h-[70vh] rounded-[100%] bg-gradient-to-br from-red-500/10 via-red-500/5 to-transparent blur-3xl transform transition-transform duration-[3000ms] hover:translate-x-10 hover:translate-y-10"></div>
-        <div className="absolute top-[40%] -right-[10%] w-[90vw] h-[60vh] rounded-[100%] bg-gradient-to-tl from-blue-500/10 via-blue-500/3 to-transparent blur-3xl transform transition-transform duration-[3000ms] hover:-translate-x-10 hover:-translate-y-10"></div>
-        <div className="absolute bottom-[10%] -left-[5%] w-[70vw] h-[40vh] rounded-[100%] bg-purple-500/5 blur-3xl transform transition-transform duration-[3000ms] hover:translate-x-5 hover:translate-y-5"></div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2.5 }}
+        >
+          <motion.div
+            animate={{
+              x: [0, 10, 0],
+              y: [0, 15, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute -top-[10%] -left-[20%] w-[100vw] h-[70vh] rounded-[100%] bg-gradient-to-br from-red-500/10 via-red-500/5 to-transparent blur-3xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, -15, 0],
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute top-[40%] -right-[10%] w-[90vw] h-[60vh] rounded-[100%] bg-gradient-to-tl from-blue-500/10 via-blue-500/3 to-transparent blur-3xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, 8, 0],
+              y: [0, 8, 0],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute bottom-[10%] -left-[5%] w-[70vw] h-[40vh] rounded-[100%] bg-purple-500/5 blur-3xl"
+          />
+        </motion.div>
       </div>
 
       <div className="relative min-h-screen flex items-center justify-center">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+        >
           <div className="text-center">
-            <img
+            <motion.img
+              variants={item}
               src={logoSrc}
               alt="CAIS Logo"
-              className="h-32 md:h-40 lg:h-48 mx-auto mb-8 animate-fadeIn transition-transform hover:scale-105"
+              className="h-32 md:h-40 lg:h-48 mx-auto mb-8"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fadeIn delay-300 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-              {title}
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-fadeIn delay-500 min-h-[5rem]">
-              {displayText}
-              {!isTypingComplete && <span className="animate-pulse">|</span>}
-            </p>
+            <motion.h1
+              variants={item}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 flex justify-center items-center flex-wrap gap-x-4 gap-y-2"
+            >
+              {words.map((word, i) => (
+                <motion.span
+                  key={i}
+                  className="relative inline-block"
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: 1,
+                    color: word === "ΛI" ? "#ef4444" : undefined,
+                  }}
+                  transition={{ duration: 1.2, delay: i * 0.4 }}
+                >
+                  <span className={word === "ΛI" ? "" : "bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"}>
+                    {word}
+                  </span>
+                </motion.span>
+              ))}
+            </motion.h1>
 
-            <div className="flex justify-center gap-4 mb-12 animate-fadeIn delay-700">
-              {SOCIAL_LINKS.map((url) => (
-                <div key={url} className="group relative">
+            <motion.p
+              variants={item}
+              className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 min-h-[5rem]"
+            >
+              {displayText}
+              {!isTypingComplete && (
+                <motion.span
+                  animate={{ opacity: [1, 0] }}
+                  transition={{ duration: 0.8, repeat: Infinity }}
+                >
+                  |
+                </motion.span>
+              )}
+            </motion.p>
+
+            <motion.div
+              variants={item}
+              className="flex justify-center gap-4 mb-12"
+            >
+              {SOCIAL_LINKS.map((url, index) => (
+                <motion.div
+                  key={url}
+                  className="group relative"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  custom={index}
+                >
                   <SocialIcon
                     url={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-all duration-300 group-hover:scale-110 relative z-10"
+                    className="relative z-10"
                     style={{ height: 40, width: 40 }}
                     bgColor="#ffffff"
                     fgColor="#1a2238"
                     data-testid="social-icon"
                   />
-                  <div className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-                </div>
+                  <motion.div
+                    className="absolute inset-0 bg-white/20 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-4 animate-fadeIn delay-900">
+            <motion.div
+              variants={item}
+              className="flex flex-wrap justify-center gap-4"
+            >
               {primaryAction && (
-                <Link
-                  to={primaryAction.to}
-                  className="px-8 py-3 text-lg font-medium rounded-lg bg-white text-[#1a2238] hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105 active:scale-95"
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  {primaryAction.text}
-                </Link>
+                  <Link
+                    to={primaryAction.to}
+                    className="px-8 py-3 text-lg font-medium rounded-lg bg-white text-[#1a2238] hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                  >
+                    {primaryAction.text}
+                  </Link>
+                </motion.div>
               )}
               {secondaryAction && (
-                <Link
-                  to={secondaryAction.to}
-                  className="px-8 py-3 text-lg font-medium rounded-lg border-2 border-white text-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 hover:scale-105 active:scale-95"
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  {secondaryAction.text}
-                </Link>
+                  <Link
+                    to={secondaryAction.to}
+                    className="px-8 py-3 text-lg font-medium rounded-lg border-2 border-white text-white hover:bg-white/20 transition-all duration-300"
+                  >
+                    {secondaryAction.text}
+                  </Link>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

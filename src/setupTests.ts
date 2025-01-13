@@ -1,11 +1,11 @@
-import '@testing-library/jest-dom';
-import util from 'util';
+import "@testing-library/jest-dom";
+import util from "util";
 
 Object.defineProperties(globalThis, {
   TextEncoder: {
-    value: util.TextEncoder
+    value: util.TextEncoder,
   },
   TextDecoder: {
-    value: util.TextDecoder
-  }
-}); 
+    value: util.TextDecoder,
+  },
+});
