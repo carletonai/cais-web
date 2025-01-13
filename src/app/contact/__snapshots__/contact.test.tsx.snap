@@ -15,6 +15,63 @@ exports[`renders ContactPage correctly 1`] = `
     >
       Get in touch with the CAIS team.
     </p>
+    <div>
+      <a
+        class="Sing-up-forum-link"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSe2Bvvr6NCrHmb9fdtqRxR3v-6QmGqi2E-4p112TNFDZrcX5w/viewform?pli=1"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Sign Up Form
+      </a>
+    </div>
+    <div>
+      SocialIcon
+      <a
+        class="Instagram-link"
+        href="https://www.instagram.com/carletonaisociety/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Instagram
+      </a>
+      <a>
+         
+      </a>
+      SocialIcon
+      <a
+        class="Discord-link"
+        href="https://discord.gg/nsvsMJaSRJ"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Discord
+      </a>
+      <a>
+         
+      </a>
+      SocialIcon
+      <a
+        class="Linkedin-link"
+        href="https://www.linkedin.com/company/carleton-ai"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Linkedin
+      </a>
+      <a>
+         
+      </a>
+      SocialIcon
+      <a
+        class="Youtube-link"
+        href="https://www.youtube.com/channel/UCWKRnTa68hlHrW6WYCgCNaw"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        YouTube
+      </a>
+    </div>
   </div>
 </DocumentFragment>
 `;
