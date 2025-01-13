@@ -1,103 +1,93 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SocialIcon } from 'react-social-icons';
 
-interface ActionButton {
-  label: string;
-  path: string;
-  primary?: boolean;
-}
-
-const HERO_CONTENT = {
-  logo: {
-    src: "/cais-web/transparent-club.png",
-    alt: "CAIS Logo",
-  },
-  title: {
-    main: "Carleton",
-    highlight: "AI",
-    end: "Society"
-  },
-  subtitle: "Artificial Intelligence & Machine Learning",
-  description: "Join Carleton University's premier student organization dedicated to exploring and advancing AI technology. We bring students together, host workshops, and build innovative projects.",
-  tagline: "Learn • Build • Connect",
-};
-
-const ACTION_BUTTONS: ActionButton[] = [
-  {
-    label: "Join CAIS",
-    path: "/cais-web/contact",
-    primary: true,
-  },
-  {
-    label: "View Events",
-    path: "/cais-web/events",
-  },
+const SOCIAL_LINKS = [
+  "https://www.instagram.com/carletonaisociety/",
+  "https://discord.gg/nsvsMJaSRJ",
+  "https://www.linkedin.com/company/carleton-ai",
+  "https://www.youtube.com/channel/UCWKRnTa68hlHrW6WYCgCNaw"
 ];
 
-export default function Hero() {
-  const renderActionButton = (button: ActionButton) => {
-    if (button.primary) {
-      return (
-        <Link
-          key={button.path}
-          to={button.path}
-          className="rounded-md bg-red-500 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 transition-all duration-200"
-        >
-          {button.label}
-        </Link>
-      );
-    }
-    return (
-      <Link
-        key={button.path}
-        to={button.path}
-        className="text-base font-semibold leading-6 text-gray-200 hover:text-red-400 transition-colors duration-200"
-      >
-        {button.label} <span aria-hidden="true">→</span>
-      </Link>
-    );
-  };
+interface ActionButton {
+  text: string;
+  to: string;
+}
 
+interface HeroProps {
+  title: string;
+  description: string;
+  logoSrc: string;
+  primaryAction?: ActionButton;
+  secondaryAction?: ActionButton;
+}
+
+export default function Hero({ title, description, logoSrc, primaryAction, secondaryAction }: HeroProps) {
   return (
-    <div className="relative">
-      <div className="px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl py-20 sm:py-28">
+    <div className="min-h-screen w-full bg-[#1a2238] overflow-hidden">
+      {/* Background gradients - positioned relative to viewport */}
+      <div className="fixed inset-0">
+        {/* Primary glow - top left */}
+        <div className="absolute -top-[10%] -left-[20%] w-[100vw] h-[70vh] rounded-[100%] bg-gradient-to-br from-red-500/10 via-red-500/5 to-transparent blur-3xl"></div>
+        {/* Secondary glow - middle right */}
+        <div className="absolute top-[40%] -right-[10%] w-[90vw] h-[60vh] rounded-[100%] bg-gradient-to-tl from-blue-500/10 via-blue-500/3 to-transparent blur-3xl"></div>
+        {/* Accent glow - bottom left */}
+        <div className="absolute bottom-[10%] -left-[5%] w-[70vw] h-[40vh] rounded-[100%] bg-purple-500/5 blur-3xl"></div>
+      </div>
+      
+      {/* Content */}
+      <div className="relative min-h-screen flex items-center justify-center">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <div className="flex justify-center mb-10">
-              <img 
-                src={HERO_CONTENT.logo.src}
-                alt={HERO_CONTENT.logo.alt}
-                className="h-32 w-auto sm:h-40 md:h-48"
-              />
-            </div>
-            <div className="mb-8">
-              <h1 className="relative text-5xl font-bold tracking-tight sm:text-7xl mb-4 inline-block">
-                <span className="text-white">{HERO_CONTENT.title.main} </span>
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-red-400 px-1">{HERO_CONTENT.title.highlight}</span>
-                  <span 
-                    className="absolute -inset-1 bg-gradient-to-r from-red-500/0 via-red-500/10 to-red-500/0 blur-sm"
-                    aria-hidden="true"
-                  ></span>
-                  <span 
-                    className="absolute -inset-1 bg-gradient-to-r from-red-500/0 via-red-500/10 to-red-500/0 blur-md opacity-75 scale-110"
-                    aria-hidden="true"
-                  ></span>
-                </span>
-                <span className="text-white"> {HERO_CONTENT.title.end}</span>
-              </h1>
-              <p className="text-xl font-medium text-red-400">
-                {HERO_CONTENT.subtitle}
-              </p>
-            </div>
-            <p className="text-lg sm:text-xl leading-8 text-gray-300 max-w-2xl mx-auto mb-6">
-              {HERO_CONTENT.description}
+            {/* Logo with enhanced animation */}
+            <img 
+              src={logoSrc}
+              alt="CAIS Logo" 
+              className="h-32 md:h-40 lg:h-48 mx-auto mb-8 animate-fadeIn duration-1000"
+            />
+            
+            {/* Title and Description with clearer animations */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fadeIn animate-delay-300 duration-1000">
+              {title}
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-fadeIn animate-delay-500 duration-1000">
+              {description}
             </p>
-            <p className="text-sm sm:text-base font-medium text-gray-400 tracking-wider mb-10">
-              {HERO_CONTENT.tagline}
-            </p>
-            <div className="flex items-center justify-center gap-x-8">
-              {ACTION_BUTTONS.map(renderActionButton)}
+            
+            {/* Social Icons with smoother animation */}
+            <div className="flex justify-center gap-4 mb-12 animate-fadeIn animate-delay-700 duration-1000">
+              {SOCIAL_LINKS.map((url) => (
+                <SocialIcon 
+                  key={url}
+                  url={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform duration-300 hover:scale-110"
+                  style={{ height: 40, width: 40 }}
+                  bgColor="#ffffff"
+                  fgColor="#1a2238"
+                />
+              ))}
+            </div>
+
+            {/* Action Buttons with enhanced hover effects */}
+            <div className="flex flex-wrap justify-center gap-4 animate-fadeIn animate-delay-900 duration-1000">
+              {primaryAction && (
+                <Link
+                  to={primaryAction.to}
+                  className="px-8 py-3 text-lg font-medium rounded-lg bg-white text-[#1a2238] hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                >
+                  {primaryAction.text}
+                </Link>
+              )}
+              {secondaryAction && (
+                <Link
+                  to={secondaryAction.to}
+                  className="px-8 py-3 text-lg font-medium rounded-lg border-2 border-white text-white hover:bg-white/20 transition-all duration-300"
+                >
+                  {secondaryAction.text}
+                </Link>
+              )}
             </div>
           </div>
         </div>
