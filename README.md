@@ -2,7 +2,6 @@
   <img src="public/transparent-club.png" style="width: 250px; height: auto">
 </h3>
 
-
 <span> </span>
 
   <h6 align="center">The official <i>Carleton Artificial Intelligence Society</i> <a href="https://carletonai.github.io/cais-web/">Website</a></h6>

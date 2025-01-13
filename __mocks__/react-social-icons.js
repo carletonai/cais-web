@@ -1,3 +1,3 @@
 module.exports = {
-  SocialIcon: () => 'SocialIcon',
+  SocialIcon: () => "SocialIcon",
 };
