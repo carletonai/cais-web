@@ -72,6 +72,7 @@ export default function Hero({
                   style={{ height: 40, width: 40 }}
                   bgColor="#ffffff"
                   fgColor="#1a2238"
+                  data-testid="social-icon"
                 />
               ))}
             </div>
