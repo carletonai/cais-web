@@ -37,6 +37,6 @@
 ---
 
 <div>
-  <a href="LICENSE"><h3 align="center" >This project is under the MIT License</
+  <h3 align="center" >This project is under the MIT <a href="LICENSE">License</a></h3>
 </div>
 
