@@ -80,7 +80,7 @@ export default function Navbar() {
 
   const Logo = () => (
     <div className={STYLES.logoContainer}>
-      <Link to="/" className={STYLES.logoText}>
+      <Link to="/cais-web/" className={STYLES.logoText}>
         CAIS
       </Link>
     </div>
