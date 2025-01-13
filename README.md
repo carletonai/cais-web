@@ -1,108 +1,42 @@
-# CAIS Website
+<div> 
+  <h3 align="center">
+    <img src="public/club.png">
+  </h3>
+  <h6 align="center">The official <i>Carleton Artificial Intelligence Society</i> <a href="https://carletonai.github.io/cais-web/">Website</a></h6>
+  <h6 align="center">
+    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white">
+    <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+  </h6>
+  <h6 align="center">
+     <img src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220">
+     <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white">
+    <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white">
+  </h6>
+</div>
 
-The official website for Carleton's Artificial Intelligence Society (CAIS). This project aims to create a modern, responsive web platform for our AI/ML community at Carleton University.
+---
 
-## Tech Stack
+<div>
+  <h3 align="center">CAIS Website</h2>
+  <p>
+    This project aims to create a modern, responsive web platform for our AI/ML community at <a href="https://carleton.ca/"> Carleton University</a>.
+  </p>
+</div>
 
-- **Framework**: Vite + React + TypeScript
-- **Styling**: TailwindCSS
-- **Package Manager**: pnpm
-- **Deployment**: GitHub Pages
-- **CI/CD**: GitHub Actions
+---
 
-## Prerequisites
+<div>
+  <h3 align="center">Team</h3>
+  <p>
+    This project is maintained by the CAIS development team. For any questions or concerns, please open an issue or reach out to the team on <a href="https://discord.gg/nsvsMJaSRJ">Discord</a>. 
+  </p>
+</div>
 
-- Node.js 18 or later
-- pnpm (recommended for better performance and disk space efficiency)
+---
 
-## Getting Started
+<div>
+  <a href="LICENSE"><h3 align="center" >This project is under the MIT License</
+</div>
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/carletonai/cais-web.git
-cd cais-web
-```
-
-2. Install dependencies:
-
-```bash
-pnpm install
-```
-
-3. Run the development server:
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
-
-## Development Guidelines
-
-- **Branch Naming Convention**:
-
-  - Features: `feature/name`
-  - Bugfixes: `bugfix/name`
-  - Upgrade: `upgrade/name`
-
-- **Branching Strategy**:
-
-  - Main branch: Protected, requires pull request reviews
-  - Feature branches: Created for specific features or sections
-    - `feature/setup-initial-routes`: Initial page structure and routing
-    - `feature/hero-section`: Hero section development
-  - Create new feature branches for major components or sections
-  - Keep changes focused and atomic
-
-- **Code Quality**:
-  - ESLint for code linting
-  - Prettier for code formatting
-  - Jest for testing
-
-## Available Scripts
-
-```bash
-pnpm dev          # Start development server
-pnpm build        # Build for production
-pnpm serve        # Start production server
-pnpm test         # Run tests
-pnpm lint         # Run linting
-pnpm format       # Check formatting
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch following the naming convention
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## Project Structure
-
-```
-src/
-├── components/   # Reusable UI components
-├── app/          # Main application code
-│   └── App.tsx   # Root application component
-├── assets/       # Static assets
-└── styles/       # Global styles and Tailwind config
-```
-
-### Pages Description
-
-- **Home (/)**: Landing page showcasing CAIS's mission and latest updates
-- **About (/about)**: Information about CAIS, our history, mission, and values
-- **Events (/events)**: Upcoming and past events, workshops, and activities
-- **Team (/team)**: Meet our executive team and contributors
-- **Projects (/projects)**: Showcase of current and past projects
-- **Contact (/contact)**: Get in touch with CAIS
-
-## Team
-
-This project is maintained by the CAIS development team. For any questions or concerns, please open an issue or reach out to the team on Discord.
-
-## License
-
-[MIT License](LICENSE)
