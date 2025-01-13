@@ -8,7 +8,9 @@ const AboutPage = () => {
           <div className="animate-fadeIn">
             <h2 className="text-3xl font-bold mb-4 text-white">What We Do</h2>
             <p className="text-lg text-gray-300">
-              We help Carleton students learn about AI through workshops, projects, and events. Whether you're just starting out or already know some AI, we've got something for you.
+              We help Carleton students learn about AI through workshops,
+              projects, and events. Whether you're just starting out or already
+              know some AI, we've got something for you.
             </p>
           </div>
           <div className="animate-fadeIn [animation-delay:200ms]">

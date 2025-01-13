@@ -3,18 +3,55 @@
 exports[`renders AboutPage correctly 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen p-8"
+    class="min-h-screen bg-[#1a2238] pt-20"
   >
-    <h1
-      class="text-4xl font-bold mb-6"
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
     >
-      About CAIS
-    </h1>
-    <p
-      class="text-lg"
-    >
-      Welcome to Carleton's Artificial Intelligence Society.
-    </p>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        <div
+          class="animate-fadeIn"
+        >
+          <h2
+            class="text-3xl font-bold mb-4 text-white"
+          >
+            What We Do
+          </h2>
+          <p
+            class="text-lg text-gray-300"
+          >
+            We help Carleton students learn about AI through workshops, projects, and events. Whether you're just starting out or already know some AI, we've got something for you.
+          </p>
+        </div>
+        <div
+          class="animate-fadeIn [animation-delay:200ms]"
+        >
+          <h2
+            class="text-3xl font-bold mb-4 text-white"
+          >
+            Join Us
+          </h2>
+          <ul
+            class="space-y-4 text-lg text-gray-300"
+          >
+            <li>
+              • Learn AI skills through workshops and projects
+            </li>
+            <li>
+              • Meet other students interested in AI
+            </li>
+            <li>
+              • Get help with your AI coursework
+            </li>
+            <li>
+              • Work on cool projects together
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

@@ -17,7 +17,7 @@
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "fix": "pnpm lint && pnpm format",
-    "predeploy": "pnpm build",
+    "predeploy": "pnpm fix && pnpm build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
