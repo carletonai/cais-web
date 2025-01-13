@@ -64,18 +64,18 @@ export default function Hero({
             <img
               src={logoSrc}
               alt="CAIS Logo"
-              className="h-32 md:h-40 lg:h-48 mx-auto mb-8 animate-fadeIn duration-1000 hover:scale-105 transition-transform"
+              className="h-32 md:h-40 lg:h-48 mx-auto mb-8 animate-fadeIn transition-transform hover:scale-105"
             />
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fadeIn animate-delay-300 duration-1000 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fadeIn delay-300 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               {title}
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-fadeIn animate-delay-500 duration-1000 min-h-[5rem]">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate-fadeIn delay-500 min-h-[5rem]">
               {displayText}
               {!isTypingComplete && <span className="animate-pulse">|</span>}
             </p>
 
-            <div className="flex justify-center gap-4 mb-12 animate-fadeIn animate-delay-700 duration-1000">
+            <div className="flex justify-center gap-4 mb-12 animate-fadeIn delay-700">
               {SOCIAL_LINKS.map((url) => (
                 <div key={url} className="group relative">
                   <SocialIcon
@@ -93,7 +93,7 @@ export default function Hero({
               ))}
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 animate-fadeIn animate-delay-900 duration-1000">
+            <div className="flex flex-wrap justify-center gap-4 animate-fadeIn delay-900">
               {primaryAction && (
                 <Link
                   to={primaryAction.to}
