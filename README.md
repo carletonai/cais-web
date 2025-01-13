@@ -1,7 +1,16 @@
+<style>
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+</style>
+
 <div> 
   <h3 align="center">
     <img src="public/club.png" style="width: 500px; height: auto">
   </h3>
+  <span> </span>
   <h6 align="center">The official <i>Carleton Artificial Intelligence Society</i> <a href="https://carletonai.github.io/cais-web/">Website</a></h6>
   <h6 align="center">
     <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
