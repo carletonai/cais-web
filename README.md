@@ -37,6 +37,15 @@
 ---
 
 <div>
+  <h3 align="center">Contributing</h3>
+  <p>
+    This project is open to work on, vist <a href="CONTRIBUTING">CONTRIBUTING</a> to get started.
+  </p>
+</div>
+
+---
+
+<div>
   <h3 align="center" >This project is under the MIT <a href="LICENSE">License</a></h3>
 </div>
 
