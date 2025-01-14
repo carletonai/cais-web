@@ -7,6 +7,7 @@ import Contact from "./contact/contact";
 import Team from "./team/team";
 import HomePage from "./home/home";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer"
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );
