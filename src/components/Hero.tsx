@@ -103,7 +103,7 @@ export default function Hero({
           src={logoSrc}
           alt="CAIS Logo"
           className="h-32 md:h-40 lg:h-48 mx-auto mb-12 drop-shadow-2xl relative z-20"
-          whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         />
 
@@ -151,7 +151,7 @@ export default function Hero({
                 <motion.div
                   key={url}
                   className="group relative"
-                  whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
