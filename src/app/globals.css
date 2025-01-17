@@ -1,8 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+@layer base {
+  :root {
+    --transparent: transparent;
+    --white: white;
+    --black: black;
+    --background: 225 30% 8%;
+    --foreground: 210 40% 98%;
 
-body {
-  margin: 0;
-  padding: 0;
+    --card: 225 30% 9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 225 30% 9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 0 90% 65%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 225 30% 11%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 225 30% 11%;
+    --muted-foreground: 210 40% 85%;
+ 
+    --accent: 0 90% 65%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 90% 65%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 30% 14%;
+    --input: 225 30% 14%;
+    --ring: 0 90% 65%;
+ 
+    --radius: 0.5rem;
+  }
 }
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Inter Variable', system-ui, sans-serif;
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope Variable', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/90 backdrop-blur-sm border-border/30;
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/5 transition-all duration-300;
+  }
+
+  .glow-sm {
+    @apply shadow-[0_0_15px_rgba(239,68,68,0.15)] hover:shadow-[0_0_20px_rgba(239,68,68,0.25)] transition-shadow duration-300;
+  }
+
+  .glow-md {
+    @apply shadow-[0_0_25px_rgba(239,68,68,0.2)] hover:shadow-[0_0_35px_rgba(239,68,68,0.3)] transition-shadow duration-300;
+  }
+
+  .glow-lg {
+    @apply shadow-[0_0_35px_rgba(239,68,68,0.25)] hover:shadow-[0_0_50px_rgba(239,68,68,0.35)] transition-shadow duration-300;
+  }
+
+  .text-glow-sm {
+    @apply drop-shadow-[0_0_3px_rgba(239,68,68,0.4)];
+  }
+
+  .text-glow {
+    @apply drop-shadow-[0_0_5px_rgba(239,68,68,0.5)];
+  }
+
+  .gradient-mask-b {
+    mask-image: linear-gradient(to bottom, black, transparent);
+  }
+
+  .gradient-mask-t {
+    mask-image: linear-gradient(to top, black, transparent);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);  
+  }
+
+  .text-shadow {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+  }
+}
+
+

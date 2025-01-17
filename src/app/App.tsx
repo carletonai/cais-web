@@ -7,14 +7,14 @@ import Contact from "./contact/contact";
 import Team from "./team/team";
 import HomePage from "./home/home";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-[#1a2238] text-gray-200">
+        <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <main className="pt-16 max-w-7xl mx-auto px-4 sm:px-6">
+        <main className="pt-16 w-full">
           <Routes>
             <Route path="/cais-web/about" element={<About />} />
             <Route path="/cais-web/projects" element={<Projects />} />

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+
 
 const SOCIAL_LINKS = [
   "https://www.instagram.com/carletonaisociety/",
@@ -77,85 +80,47 @@ export default function Hero({
   }, [description]);
 
   return (
-    <div className="min-h-screen w-full bg-[#1a2238] overflow-hidden">
-      <div className="fixed inset-0">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2.5 }}
-        >
-          <motion.div
-            animate={{
-              x: [0, 10, 0],
-              y: [0, 15, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute -top-[10%] -left-[20%] w-[100vw] h-[70vh] rounded-[100%] bg-gradient-to-br from-red-500/10 via-red-500/5 to-transparent blur-3xl"
-          />
-          <motion.div
-            animate={{
-              x: [0, -15, 0],
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute top-[40%] -right-[10%] w-[90vw] h-[60vh] rounded-[100%] bg-gradient-to-tl from-blue-500/10 via-blue-500/3 to-transparent blur-3xl"
-          />
-          <motion.div
-            animate={{
-              x: [0, 8, 0],
-              y: [0, 8, 0],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute bottom-[10%] -left-[5%] w-[70vw] h-[40vh] rounded-[100%] bg-purple-500/5 blur-3xl"
-          />
-        </motion.div>
-      </div>
+    <BackgroundGradientAnimation
+      gradientBackgroundStart="rgb(0, 0, 0)" 
+      gradientBackgroundEnd="rgb(20, 20, 20)"
+      firstColor="255, 255, 255"
+      secondColor="255, 0, 0"
+      thirdColor="200, 200, 200"
+      fourthColor="100, 0, 0"
+      fifthColor="150, 150, 150"
+      pointerColor="255, 0, 0"
+      className="min-h-screen"
+    >
+      <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="w-full min-h-screen pt-16 pb-32 px-4 sm:px-6 lg:px-8 relative z-10"
+      >
+      <div className="text-center container mx-auto relative">
+        <motion.img
+          variants={item}
+          src={logoSrc}
+          alt="CAIS Logo"
+          className="h-32 md:h-40 lg:h-48 mx-auto mb-12 drop-shadow-2xl relative z-20"
+            whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        />
 
-      <div className="relative min-h-screen flex items-center justify-center">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
-        >
-          <div className="text-center">
-            <motion.img
-              variants={item}
-              src={logoSrc}
-              alt="CAIS Logo"
-              className="h-32 md:h-40 lg:h-48 mx-auto mb-8"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
 
             <motion.h1
               variants={item}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 flex justify-center items-center flex-wrap gap-x-4 gap-y-2"
+              className="text-hero font-heading mb-8 flex justify-center items-center flex-wrap gap-x-4 gap-y-2"
             >
               {words.map((word, i) => (
                 <motion.span
                   key={i}
-                  className="relative inline-block"
+                  className="relative inline-block text-shadow-lg"
                   initial={{ opacity: 0 }}
-                  animate={{ 
-                    opacity: 1,
-                    color: word === "ΛI" ? "#ef4444" : undefined,
-                  }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 1.2, delay: i * 0.4 }}
                 >
-                  <span className={word === "ΛI" ? "" : "bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"}>
+                    <span className={word === "ΛI" ? "text-primary text-glow" : "text-foreground"}>
                     {word}
                   </span>
                 </motion.span>
@@ -164,28 +129,29 @@ export default function Hero({
 
             <motion.p
               variants={item}
-              className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 min-h-[5rem]"
+              className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 font-light text-shadow-lg"
             >
               {displayText}
               {!isTypingComplete && (
                 <motion.span
                   animate={{ opacity: [1, 0] }}
                   transition={{ duration: 0.8, repeat: Infinity }}
+                  className="text-primary"
                 >
                   |
                 </motion.span>
               )}
             </motion.p>
 
-            <motion.div
+            <motion.div 
               variants={item}
-              className="flex justify-center gap-4 mb-12"
+              className="flex justify-center gap-6 mb-16"
             >
               {SOCIAL_LINKS.map((url, index) => (
                 <motion.div
                   key={url}
                   className="group relative"
-                  whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -197,15 +163,8 @@ export default function Hero({
                     rel="noopener noreferrer"
                     className="relative z-10"
                     style={{ height: 40, width: 40 }}
-                    bgColor="#ffffff"
+                    bgColor="currentColor"
                     fgColor="#1a2238"
-                    data-testid="social-icon"
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-white/20 rounded-full"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                   />
                 </motion.div>
               ))}
@@ -213,40 +172,35 @@ export default function Hero({
 
             <motion.div
               variants={item}
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-wrap justify-center gap-6"
             >
               {primaryAction && (
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                <Button 
+                  asChild
+                  size="lg"
+                  variant="default"
+                  className="h-12 px-8 text-lg"
                 >
-                  <Link
-                    to={primaryAction.to}
-                    className="px-8 py-3 text-lg font-medium rounded-lg bg-white text-[#1a2238] hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
-                  >
+                  <Link to={primaryAction.to}>
                     {primaryAction.text}
                   </Link>
-                </motion.div>
+                </Button>
               )}
               {secondaryAction && (
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                <Button 
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="h-12 px-8 text-lg"
                 >
-                  <Link
-                    to={secondaryAction.to}
-                    className="px-8 py-3 text-lg font-medium rounded-lg border-2 border-white text-white hover:bg-white/20 transition-all duration-300"
-                  >
+                  <Link to={secondaryAction.to}>
                     {secondaryAction.text}
                   </Link>
-                </motion.div>
+                </Button>
               )}
             </motion.div>
           </div>
         </motion.div>
-      </div>
-    </div>
-  );
+      </BackgroundGradientAnimation>
+      );
 }

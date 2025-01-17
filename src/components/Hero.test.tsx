@@ -27,10 +27,15 @@ const renderHero = (props = mockProps) => {
 };
 
 describe("Hero Component", () => {
-  it("renders title and description", () => {
+  it("renders title and description", async () => {
     renderHero();
-    expect(screen.getByText(mockProps.title)).toBeInTheDocument();
-    expect(screen.getByText(mockProps.description)).toBeInTheDocument();
+    // Check for individual words of the title
+    mockProps.title.split(" ").forEach(word => {
+      expect(screen.getByText(word)).toBeInTheDocument();
+    });
+    // Check for the description text
+    const description = await screen.findByText(mockProps.description);
+    expect(description).toBeInTheDocument();
   });
 
   it("renders the logo with correct attributes", () => {
