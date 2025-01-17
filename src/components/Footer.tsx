@@ -1,15 +1,30 @@
 import React from "react";
-
-
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-8">
-      <div className="text-center mt-8 border-t border-gray-700 pt-4">
-        <p className="text-gray-500">
-          © {new Date().getFullYear()} Carleton Artificial Intelligence Society
-        </p>
+    <footer className="relative overflow-hidden w-full">
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5" />
+      
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/90" />
+      </div>
+
+        <div className="border-t border-border/30">
+        <div className="container mx-auto px-4 sm:px-6 py-8">
+          <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+          >
+          <p className="text-muted-foreground/80">
+              © {new Date().getFullYear()} Carleton Artificial Intelligence Society
+            </p>
+          </motion.div>
+        </div>
       </div>
     </footer>
   );
 }
+
