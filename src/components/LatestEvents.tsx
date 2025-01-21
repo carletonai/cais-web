@@ -56,14 +56,10 @@ const item = {
 
 export function LatestEvents() {
 	return (
-		<section className="py-24 relative overflow-hidden w-full">
-			<div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5" />
-			
-			<div className="absolute inset-0">
-				<div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background" />
-			</div>
+		<section className="pt-12 pb-8 relative">
+			<div className="container mx-auto px-4 sm:px-6 relative z-10">
 
-			<div className="container mx-auto px-4 sm:px-6 relative">
+
 				<motion.div 
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +74,7 @@ export function LatestEvents() {
 						asChild 
 						variant="outline"
 						size="lg"
-						className="glass hover:bg-white/5 hover:border-primary/50 transition-all duration-300"
+						className="glass hover:bg-primary/5 hover:border-primary/50 transition-all duration-300"
 					>
 						<Link to="/cais-web/events">View All Events</Link>
 					</Button>
@@ -95,21 +91,22 @@ export function LatestEvents() {
 						<motion.div key={index} variants={item}>
 							<div
 								className={cn(
-									"max-w-xs w-full group/card cursor-pointer overflow-hidden relative card h-full rounded-md shadow-xl mx-auto flex flex-col justify-between p-6",
-									"bg-[url(https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80)] bg-cover"
+									"max-w-xs w-full group/card relative h-full rounded-xl p-6",
+									"border border-primary/10",
+									"transition-all duration-300"
 								)}
+
 							>
-								<div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
 								<div className="relative z-10">
 									<div className="flex justify-between items-start mb-4">
-										<span className="px-3 py-1 rounded-full bg-primary/10 text-sm font-medium text-primary group-hover:text-glow-sm transition-all duration-300">
+										<span className="px-3 py-1 rounded-full bg-primary/10 text-sm font-medium text-primary">
 											{event.type}
 										</span>
-										<span className="text-sm text-gray-300">{event.date}</span>
+										<span className="text-sm text-muted-foreground">{event.date}</span>
 									</div>
-									<h3 className="text-xl mb-2 text-gray-50 group-hover:text-glow-sm transition-all duration-300">{event.title}</h3>
-									<p className="text-sm text-gray-300 mb-4">{event.description}</p>
-									<div className="space-y-3 text-sm text-gray-400">
+									<h3 className="text-xl mb-2 group-hover/card:text-primary transition-colors duration-300">{event.title}</h3>
+									<p className="text-sm text-foreground/80 mb-4">{event.description}</p>
+									<div className="space-y-3 text-sm text-muted-foreground">
 										<div className="flex items-center gap-2">
 											<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -125,10 +122,10 @@ export function LatestEvents() {
 										</div>
 									</div>
 								</div>
-								<div className="mt-6 relative z-10">
+								<div className="mt-6">
 									<Button 
 										asChild 
-										className="w-full glass hover:bg-white/5 hover:border-primary/50 transition-all duration-300"
+										className="w-full glass hover:bg-primary/5 hover:border-primary/50 transition-all duration-300"
 									>
 										<Link to={`/cais-web/events#${event.title.toLowerCase().replace(/ /g, '-')}`}>
 											Learn More

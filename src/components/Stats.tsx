@@ -51,14 +51,8 @@ const item = {
 
 export function Stats() {
 	return (
-		<section className="py-24 relative overflow-hidden w-full">
-			<div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5" />
-			
-			<div className="absolute inset-0">
-				<div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-			</div>
-
-			<div className="container mx-auto px-4 sm:px-6 relative">
+		<section className="pt-12 pb-8 relative">
+			<div className="container mx-auto px-4 sm:px-6 relative z-10">
 				<motion.div 
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -82,24 +76,25 @@ export function Stats() {
 						<motion.div key={index} variants={item}>
 							<div 
 								className={cn(
-									"max-w-xs w-full group/card cursor-pointer overflow-hidden relative card h-full rounded-md shadow-xl mx-auto flex flex-col justify-between p-6",
-									"bg-[url(https://images.unsplash.com/photo-1544077960-604201fe74bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80)] bg-cover"
+									"max-w-xs w-full group/card relative h-full rounded-xl p-6",
+									"border border-primary/10",
+									"transition-all duration-300"
 								)}
+
 							>
-								<div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
 								<div className="text-center relative z-10">
 									<motion.div 
-										className="text-5xl font-bold mb-3 text-primary group-hover:text-glow-sm transition-all duration-300"
+										className="text-5xl font-bold mb-3 text-primary group-hover/card:text-glow-sm transition-all duration-300"
 										initial={{ scale: 0.5, opacity: 0 }}
 										whileInView={{ scale: 1, opacity: 1 }}
 										transition={{ delay: 0.2, duration: 0.5 }}
 									>
 										{stat.number}
 									</motion.div>
-									<div className="text-xl font-semibold mb-2 text-gray-50">
+									<div className="text-xl font-semibold mb-2 text-foreground/90">
 										{stat.label}
 									</div>
-									<p className="text-sm text-gray-300">
+									<p className="text-sm text-muted-foreground">
 										{stat.description}
 									</p>
 								</div>
