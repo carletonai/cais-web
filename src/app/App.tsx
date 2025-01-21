@@ -12,9 +12,9 @@ import Footer from "../components/Footer";
 const App = () => {
   return (
     <Router>
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="min-h-screen bg-background text-foreground flex flex-col">
         <Navbar />
-        <main className="pt-16 w-full">
+        <main className="pt-16 w-full flex-grow">
           <Routes>
             <Route path="/cais-web/about" element={<About />} />
             <Route path="/cais-web/projects" element={<Projects />} />
