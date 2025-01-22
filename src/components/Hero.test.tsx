@@ -30,7 +30,7 @@ describe("Hero Component", () => {
   it("renders title and description", async () => {
     renderHero();
     // Check for individual words of the title
-    mockProps.title.split(" ").forEach(word => {
+    mockProps.title.split(" ").forEach((word) => {
       expect(screen.getByText(word)).toBeInTheDocument();
     });
     // Check for the description text

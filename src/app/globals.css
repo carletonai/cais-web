@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --transparent: transparent;
@@ -12,48 +12,53 @@
 
     --card: 225 30% 9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 225 30% 9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 358 75% 55%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 225 30% 11%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 225 30% 11%;
     --muted-foreground: 210 40% 85%;
- 
+
     --accent: 0 90% 65%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 90% 65%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 225 30% 14%;
     --input: 225 30% 14%;
     --ring: 0 90% 65%;
- 
+
     --radius: 0.5rem;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
-  
+
   html {
-    font-family: 'Inter Variable', system-ui, sans-serif;
+    font-family: "Inter Variable", system-ui, sans-serif;
     @apply antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope Variable', system-ui, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Manrope Variable", system-ui, sans-serif;
     @apply font-bold tracking-tight;
   }
-  
+
   body {
     @apply bg-background text-foreground;
   }
@@ -73,12 +78,12 @@
   }
 
   .section-transition::before {
-    content: '';
+    content: "";
     @apply absolute inset-x-0 h-32 -top-32 bg-gradient-to-b from-transparent to-background/95 pointer-events-none;
   }
 
   .section-transition::after {
-    content: '';
+    content: "";
     @apply absolute inset-x-0 h-32 -bottom-32 bg-gradient-to-t from-transparent to-background/95 pointer-events-none;
   }
 
@@ -89,7 +94,6 @@
   .section-content {
     @apply relative z-10;
   }
-
 
   .bg-dot-pattern {
     background-image: radial-gradient(
@@ -133,7 +137,7 @@
   }
 
   .text-shadow-sm {
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);  
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
   }
 
   .text-shadow {
@@ -145,8 +149,11 @@
   }
 
   .bg-grid {
-    background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px
+      ),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
     background-size: 60px 60px;
     background-position: center center;
@@ -162,13 +169,24 @@
   }
 
   .bg-glow::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: 
-      radial-gradient(circle at 50% -20%, rgba(226,56,63, 0.6), transparent 60%),
-      radial-gradient(circle at 0% 50%, rgba(99, 68, 245, 0.3), transparent 50%),
-      radial-gradient(circle at 100% 50%, rgba(226,56,63, 0.3), transparent 50%);
+    background: radial-gradient(
+        circle at 50% -20%,
+        rgba(226, 56, 63, 0.6),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at 0% 50%,
+        rgba(99, 68, 245, 0.3),
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 100% 50%,
+        rgba(226, 56, 63, 0.3),
+        transparent 50%
+      );
     z-index: 0;
     pointer-events: none;
     animation: glow 8s ease-in-out infinite alternate;
@@ -192,9 +210,10 @@
   }
 
   .bg-grid-fade {
-    mask-image: linear-gradient(to bottom, 
-      transparent, 
-      rgba(0, 0, 0, 0.7) 10%, 
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 0, 0, 0.7) 10%,
       rgba(0, 0, 0, 1) 25%,
       rgba(0, 0, 0, 1) 75%,
       rgba(0, 0, 0, 0.7) 90%,
@@ -202,6 +221,3 @@
     );
   }
 }
-
-
-
