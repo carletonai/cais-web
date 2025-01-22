@@ -82,7 +82,7 @@ export default function Hero({
   }, [description]);
 
   return (
-    <div className="relative min-h-[90vh] bg-black overflow-hidden">
+    <div className="relative min-h-[85vh] bg-black overflow-hidden">
       <div className="absolute inset-0 bg-glow opacity-80" />
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-background" />
@@ -95,7 +95,7 @@ export default function Hero({
         variants={animations.container}
         initial="hidden"
         animate="show"
-        className="relative z-10 container mx-auto px-4 min-h-[90vh] flex flex-col justify-center pb-16"
+        className="relative z-10 container mx-auto px-4 min-h-[85vh] flex flex-col justify-center pb-12 pt-16"
         >
         <div className="text-center space-y-8">
             <motion.img

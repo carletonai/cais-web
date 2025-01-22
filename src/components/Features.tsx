@@ -43,34 +43,32 @@ const container = {
 };
 
 const item = {
-	hidden: { opacity: 0, y: 20 },
+	hidden: { opacity: 0, y: 10 },
 	show: { 
 		opacity: 1, 
 		y: 0,
 		transition: {
-			duration: 0.8,
-			ease: [0.6, -0.05, 0.01, 0.99]
+			duration: 0.4,
+			ease: [0.25, 0.1, 0.25, 1.0]
 		}
 	}
 };
 
 export function Features() {
 	return (
-		<section className="pt-12 pb-8 relative">
+		<section className="py-16 relative">
 			<div className="container mx-auto px-4 sm:px-6 relative z-10">
-
-
 				<motion.div 
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 10 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}
-					className="text-center mb-16"
+					transition={{ duration: 0.4 }}
+					className="text-center mb-12"
 				>
-					<h2 className="text-4xl font-bold mb-4 text-glow">Get Involved</h2>
-					<p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+					<h2 className="text-3xl sm:text-4xl font-bold mb-3 text-glow">Get Involved</h2>
+					<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
 						Discover how you can be part of Carleton's AI community. Whether you're just starting or already experienced, we have opportunities for everyone.
 					</p>
-					<Link to="/cais-web/about" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
+					<Link to="/cais-web/about" className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors">
 						<span>View All Opportunities</span>
 						<ArrowUpRight className="h-4 w-4" />
 					</Link>
@@ -80,30 +78,33 @@ export function Features() {
 					variants={container}
 					initial="hidden"
 					whileInView="show"
-					viewport={{ once: true }}
-					className="grid grid-cols-1 md:grid-cols-2 gap-8"
+					viewport={{ once: true, margin: "-50px" }}
+					className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
 				>
 					{features.map((feature, index) => (
 						<motion.div key={index} variants={item}>
-							<Link to={feature.link} className="block">
+							<Link to={feature.link} className="block h-full">
 								<div 
 									className={cn(
-										"group relative h-full rounded-xl p-6",
+										"group relative h-full rounded-lg p-5 sm:p-6",
+										"bg-card/50 backdrop-blur-sm",
 										"border border-primary/10",
-										"transition-all duration-300 hover:border-primary/30 hover:bg-primary/5"
+										"transition-all duration-200 ease-out",
+										"hover:border-primary/30 hover:bg-primary/5",
+										"hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/5"
 									)}
 								>
 									<div className="relative z-50">
 										<div className="flex items-center justify-between mb-2">
-											<h3 className="font-bold text-xl md:text-2xl group-hover:text-primary transition-colors duration-300">
+											<h3 className="font-semibold text-lg sm:text-xl group-hover:text-primary transition-colors duration-200">
 												{feature.title}
 											</h3>
-											<ArrowUpRight className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300" />
+											<ArrowUpRight className="h-4 w-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
 										</div>
-										<p className="font-normal text-base text-foreground/80 mb-4">
+										<p className="font-medium text-sm sm:text-base text-foreground/90 mb-3">
 											{feature.description}
 										</p>
-										<p className="text-sm text-muted-foreground">
+										<p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
 											{feature.content}
 										</p>
 									</div>
