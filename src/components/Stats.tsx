@@ -37,30 +37,31 @@ const container = {
 };
 
 const item = {
-	hidden: { opacity: 0, scale: 0.9 },
+	hidden: { opacity: 0, scale: 0.95 },
 	show: { 
 		opacity: 1, 
 		scale: 1,
 		transition: {
 			type: "spring",
-			stiffness: 300,
-			damping: 20
+			stiffness: 400,
+			damping: 30,
+			duration: 0.4
 		}
 	}
 };
 
 export function Stats() {
 	return (
-		<section className="pt-12 pb-8 relative">
+		<section className="py-16 relative">
 			<div className="container mx-auto px-4 sm:px-6 relative z-10">
 				<motion.div 
-					initial={{ opacity: 0, y: 20 }}
+					initial={{ opacity: 0, y: 10 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}
-					className="text-center mb-16"
+					transition={{ duration: 0.4 }}
+					className="text-center mb-12"
 				>
-					<h2 className="text-4xl font-bold mb-4 text-glow">Our Impact</h2>
-					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+					<h2 className="text-3xl sm:text-4xl font-bold mb-3 text-glow">Our Impact</h2>
+					<p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
 						Growing our community and making a difference in AI education
 					</p>
 				</motion.div>
@@ -69,32 +70,34 @@ export function Stats() {
 					variants={container}
 					initial="hidden"
 					whileInView="show"
-					viewport={{ once: true }}
-					className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+					viewport={{ once: true, margin: "-50px" }}
+					className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
 				>
 					{stats.map((stat, index) => (
 						<motion.div key={index} variants={item}>
 							<div 
 								className={cn(
-									"max-w-xs w-full group/card relative h-full rounded-xl p-6",
+									"group relative h-full rounded-lg p-5 sm:p-6",
+									"bg-card/50 backdrop-blur-sm",
 									"border border-primary/10",
-									"transition-all duration-300"
+									"transition-all duration-200 ease-out",
+									"hover:border-primary/30 hover:bg-primary/5",
+									"hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/5"
 								)}
-
 							>
 								<div className="text-center relative z-10">
 									<motion.div 
-										className="text-5xl font-bold mb-3 text-primary group-hover/card:text-glow-sm transition-all duration-300"
-										initial={{ scale: 0.5, opacity: 0 }}
+										className="text-3xl sm:text-4xl font-bold mb-2 text-primary group-hover:text-glow transition-colors duration-200"
+										initial={{ scale: 0.9, opacity: 0 }}
 										whileInView={{ scale: 1, opacity: 1 }}
-										transition={{ delay: 0.2, duration: 0.5 }}
+										transition={{ delay: 0.1, duration: 0.3 }}
 									>
 										{stat.number}
 									</motion.div>
-									<div className="text-xl font-semibold mb-2 text-foreground/90">
+									<div className="text-base sm:text-lg font-medium mb-1 text-foreground/90">
 										{stat.label}
 									</div>
-									<p className="text-sm text-muted-foreground">
+									<p className="text-xs sm:text-sm text-muted-foreground">
 										{stat.description}
 									</p>
 								</div>
@@ -105,5 +108,4 @@ export function Stats() {
 			</div>
 		</section>
 	);
-
 }
