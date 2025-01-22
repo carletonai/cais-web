@@ -10,7 +10,7 @@ module.exports = {
     "^react-social-icons$": "<rootDir>/__mocks__/react-social-icons.js",
     "^@/(.*)$": "<rootDir>/src/$1",
     "^@/components/ui/(.*)$": "<rootDir>/__mocks__/ui-components.js",
-    "^framer-motion$": "<rootDir>/__mocks__/framer-motion.js"
+    "^framer-motion$": "<rootDir>/__mocks__/framer-motion.js",
   },
   testMatch: ["<rootDir>/src/**/*.{test,spec}.{ts,tsx}"],
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
