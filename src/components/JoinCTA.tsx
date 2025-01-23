@@ -44,7 +44,7 @@ export function JoinCTA() {
                 size="lg"
                 className="w-full sm:w-auto min-w-[160px] h-11 text-base bg-primary/20 hover:bg-primary/30 text-primary transition-colors duration-200"
               >
-                <Link to="/cais-web/contact">Join Now</Link>
+                <Link to="/contact">Join Now</Link>
               </Button>
               <Button
                 asChild
@@ -52,7 +52,7 @@ export function JoinCTA() {
                 size="lg"
                 className="w-full sm:w-auto min-w-[160px] h-11 text-base glass hover:bg-primary/5 hover:border-primary/30 transition-all duration-200"
               >
-                <Link to="/cais-web/events">View Events</Link>
+                <Link to="/events">View Events</Link>
               </Button>
             </motion.div>
           </div>
