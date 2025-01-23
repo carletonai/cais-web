@@ -114,22 +114,24 @@ export default function Hero({
 
           <motion.div
             variants={animations.item}
-            className="mx-auto max-w-2xl h-[6rem] overflow-hidden"
+            className="mx-auto max-w-2xl text-center min-h-[3.5rem] h-[3.5rem] sm:min-h-[4.5rem] sm:h-[4.5rem] flex items-center justify-center"
           >
-            <p className="text-lg leading-8 text-muted-foreground/90">
-              <span className="relative">
-                {displayText}
-                {!isTypingComplete && (
-                  <motion.span
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.8, repeat: Infinity }}
-                    className="text-primary ml-1 inline-block"
-                  >
-                    |
-                  </motion.span>
-                )}
-              </span>
-            </p>
+            <div className="px-4 sm:px-6">
+              <p className="text-lg leading-8 text-muted-foreground/90">
+                <span className="relative inline-block w-[80vw] max-w-xl sm:w-auto overflow-hidden text-ellipsis whitespace-nowrap sm:overflow-visible sm:whitespace-normal">
+                  {displayText}
+                  {!isTypingComplete && (
+                    <motion.span
+                      animate={{ opacity: [1, 0] }}
+                      transition={{ duration: 0.8, repeat: Infinity }}
+                      className="text-primary absolute -right-2 sm:relative sm:right-0 sm:ml-0.5"
+                    >
+                      |
+                    </motion.span>
+                  )}
+                </span>
+              </p>
+            </div>
           </motion.div>
 
           <motion.div

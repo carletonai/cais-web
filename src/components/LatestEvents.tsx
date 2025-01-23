@@ -88,7 +88,7 @@ export function LatestEvents() {
             size="lg"
             className="glass hover:bg-primary/5 hover:border-primary/30 transition-all duration-200"
           >
-            <Link to="/cais-web/events">View All Events</Link>
+            <Link to="/events">View All Events</Link>
           </Button>
         </motion.div>
 

@@ -17,28 +17,28 @@ const features = [
     description: "Regular AI/ML workshops and networking events",
     content:
       "Join our hands-on workshops, guest speaker sessions, and collaborative events. Check our events calendar for upcoming activities and easily RSVP through our events page.",
-    link: "/cais-web/events",
+    link: "/events",
   },
   {
     title: "Project Opportunities",
     description: "Contribute to real-world AI projects",
     content:
       "Get involved in ongoing AI projects, from beginner-friendly to advanced implementations. Work with team members and gain practical experience in machine learning development.",
-    link: "/cais-web/projects",
+    link: "/projects",
   },
   {
     title: "Community Resources",
     description: "Access learning materials and support",
     content:
       "Connect with our active Discord community, access curated AI/ML learning resources, and get guidance from experienced members. Perfect for both beginners and advanced practitioners.",
-    link: "/cais-web/resources",
+    link: "/resources",
   },
   {
     title: "Club Governance",
     description: "Transparent club structure and operations",
     content:
       "Learn about our constitution, executive team, and how to get involved in club leadership. We maintain open communication about club decisions and future directions.",
-    link: "/cais-web/about",
+    link: "/about",
   },
 ];
 
@@ -83,7 +83,7 @@ export function Features() {
             for everyone.
           </p>
           <Link
-            to="/cais-web/about"
+            to="/about"
             className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
           >
             <span>View All Opportunities</span>

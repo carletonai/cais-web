@@ -9,24 +9,24 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Home", path: "/cais-web/" },
-  { label: "Events", path: "/cais-web/events" },
-  { label: "Projects", path: "/cais-web/projects" },
+  { label: "Home", path: "/" },
+  { label: "Events", path: "/events" },
+  { label: "Projects", path: "/projects" },
   {
     label: "About",
-    path: "/cais-web/about",
+    path: "/about",
     children: [
-      { label: "Team", path: "/cais-web/team" },
-      { label: "Governance", path: "/cais-web/governance" },
-      { label: "Contact", path: "/cais-web/contact" },
+      { label: "Team", path: "/team" },
+      { label: "Governance", path: "/governance" },
+      { label: "Contact", path: "/contact" },
     ],
   },
   {
     label: "Get Involved",
-    path: "/cais-web/contribute",
+    path: "/contribute",
     children: [
-      { label: "Resources", path: "/cais-web/resources" },
-      { label: "Contribute", path: "/cais-web/contribute" },
+      { label: "Resources", path: "/resources" },
+      { label: "Contribute", path: "/contribute" },
     ],
   },
 ];
@@ -65,7 +65,7 @@ export default function Navbar() {
           className={`flex justify-between items-center transition-all duration-300`}
         >
           <div className="flex items-center">
-            <Link to="/cais-web/" className="flex items-center group">
+            <Link to="/" className="flex items-center group">
               <img
                 src="/cais-web/header-club.png"
                 alt="CAIS Logo"

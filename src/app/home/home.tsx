@@ -17,11 +17,11 @@ const HomePage = () => {
         logoSrc="/cais-web/header-club.png"
         primaryAction={{
           text: "See Events",
-          to: "/cais-web/events",
+          to: "/events",
         }}
         secondaryAction={{
           text: "Learn More",
-          to: "/cais-web/about",
+          to: "/about",
         }}
       />
 
