@@ -1,0 +1,52 @@
+{
+	"events": [
+		{
+			"id": "1",
+			"title": "Introduction to Machine Learning",
+			"date": "2024-03-15",
+			"time": "5:30 PM - 7:30 PM",
+			"location": "Tory Building 432",
+			"description": "Learn the fundamentals of machine learning algorithms and their applications.",
+			"type": "Workshop",
+			"image": "/images/events/ml-workshop.jpg",
+			"rsvpLink": "https://forms.google.com/...",
+			"tags": ["beginner-friendly", "hands-on"]
+		},
+		{
+			"id": "2",
+			"title": "AI in Healthcare Panel Discussion",
+			"date": "2024-03-20",
+			"time": "6:00 PM - 8:00 PM",
+			"location": "River Building 2200",
+			"description": "Industry experts discuss the impact of AI in modern healthcare.",
+			"type": "Panel",
+			"image": "/images/events/healthcare-panel.jpg",
+			"rsvpLink": "https://forms.google.com/...",
+			"tags": ["healthcare", "industry-experts"]
+		},
+		{
+			"id": "3",
+			"title": "Neural Networks Deep Dive",
+			"date": "2024-03-25",
+			"time": "5:00 PM - 7:00 PM",
+			"location": "Herzberg Labs 3422",
+			"description": "Advanced workshop on neural network architectures and implementation.",
+			"type": "Workshop",
+			"image": "/images/events/neural-networks.jpg",
+			"rsvpLink": "https://forms.google.com/...",
+			"tags": ["advanced", "technical"]
+		},
+		{
+			"id": "4",
+			"title": "AI Ethics Symposium",
+			"date": "2024-04-05",
+			"time": "4:00 PM - 6:00 PM",
+			"location": "Richcraft Hall 2228",
+			"description": "Join us for a discussion on ethical considerations in AI development.",
+			"type": "Symposium",
+			"image": "/images/events/ethics-symposium.jpg",
+			"rsvpLink": "https://forms.google.com/...",
+			"tags": ["ethics", "discussion"]
+		}
+	]
+}
