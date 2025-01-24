@@ -83,7 +83,7 @@ export const teamData: Member[] =
             description: "Dev member 2025",
             title: "Tech Enthusiast",
             linkedinURL: "https://www.linkedin.com/in/jonathaneve/",
-            githubURL: "https://github.com/JonathanEveillardi c",
+            githubURL: "https://github.com/JonathanEveillard",
             linkedin: "/cais-web/linkedin.svg",
             github: "/cais-web/github.svg",
         },
