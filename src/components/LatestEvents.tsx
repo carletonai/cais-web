@@ -94,8 +94,8 @@ export function LatestEvents() {
                         event.type === "Workshop"
                           ? "bg-blue-500/10 text-blue-500"
                           : event.type === "Panel"
-                          ? "bg-purple-500/10 text-purple-500"
-                          : "bg-green-500/10 text-green-500"
+                            ? "bg-purple-500/10 text-purple-500"
+                            : "bg-green-500/10 text-green-500",
                       )}
                     >
                       {event.type}
