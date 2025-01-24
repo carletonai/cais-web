@@ -1,65 +1,35 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { CalendarIcon, MapPinIcon, ArrowRightIcon } from "lucide-react";
+import eventsData from "@/data/events.json";
 
-const events = [
-  {
-    title: "Introduction to Machine Learning",
-    date: "March 15, 2024",
-    time: "5:30 PM - 7:30 PM",
-    location: "Tory Building 432",
-    description:
-      "Learn the fundamentals of machine learning algorithms and their applications.",
-    type: "Workshop",
-  },
-  {
-    title: "AI in Healthcare Panel Discussion",
-    date: "March 20, 2024",
-    time: "6:00 PM - 8:00 PM",
-    location: "River Building 2200",
-    description:
-      "Industry experts discuss the impact of AI in modern healthcare.",
-    type: "Panel",
-  },
-  {
-    title: "Neural Networks Deep Dive",
-    date: "March 25, 2024",
-    time: "5:00 PM - 7:00 PM",
-    location: "Herzberg Labs 3422",
-    description:
-      "Advanced workshop on neural network architectures and implementation.",
-    type: "Workshop",
-  },
-];
+// Sort events by date and get the latest 3
+const events = eventsData.events
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3);
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: [0.25, 0.1, 0.25, 1.0],
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
     },
   },
 };
@@ -97,42 +67,69 @@ export function LatestEvents() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {events.map((event, index) => (
-            <motion.div key={index} variants={item}>
-              <div
-                className={cn(
-                  "group relative h-full rounded-lg p-5 sm:p-6",
-                  "bg-card/50 backdrop-blur-sm",
-                  "border border-primary/10",
-                  "transition-all duration-200 ease-out",
-                  "hover:border-primary/30 hover:bg-primary/5",
-                  "hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/5",
-                )}
-              >
-                <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <span className="inline-block px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary mb-2">
-                        {event.type}
+          {events.map((event) => (
+            <motion.div
+              key={event.id}
+              variants={item}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { type: "spring", stiffness: 400, damping: 10 }
+              }}
+              className="group relative bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors"
+            >
+              <div className="aspect-video relative overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{ backgroundImage: `url(${event.image})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                  <span className="inline-flex items-center gap-1">
+                    <CalendarIcon className="w-4 h-4" />
+                    {event.date}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <MapPinIcon className="w-4 h-4" />
+                    {event.location}
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {event.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-4 line-clamp-2">
+                  {event.description}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    {event.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                      >
+                        {tag}
                       </span>
-                      <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors duration-200">
-                        {event.title}
-                      </h3>
-                    </div>
+                    ))}
                   </div>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-sm sm:text-base text-foreground/90">
-                      {event.date} • {event.time}
-                    </p>
-                    <p className="text-sm text-foreground/80">
-                      {event.location}
-                    </p>
-                  </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">
-                    {event.description}
-                  </p>
+                  
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="group/btn"
+                    asChild
+                  >
+                    <a href={event.rsvpLink} target="_blank" rel="noopener noreferrer">
+                      RSVP
+                      <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
                 </div>
               </div>
             </motion.div>
