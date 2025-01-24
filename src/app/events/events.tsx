@@ -13,14 +13,7 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-<<<<<<< Updated upstream
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-=======
     transition: { staggerChildren: 0.15 },
->>>>>>> Stashed changes
   },
 };
 
@@ -30,7 +23,6 @@ const item = {
     opacity: 1,
     y: 0,
     transition: {
-<<<<<<< Updated upstream
       type: "spring",
       stiffness: 100,
       damping: 15,
@@ -61,10 +53,6 @@ const filterItem = {
       type: "spring",
       stiffness: 100,
       damping: 15,
-=======
-      duration: 0.4,
-      ease: [0.25, 0.1, 0.25, 1.0],
->>>>>>> Stashed changes
     },
   },
 };
@@ -79,12 +67,12 @@ const EventsPage = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {}
+      {/* Background gradients */}
       <div className="absolute inset-0 bg-glow opacity-30" />
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-background" />
 
-      {}
+      {/* Hero section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_65%)] opacity-20" />
         <motion.div
@@ -113,7 +101,7 @@ const EventsPage = () => {
         </motion.div>
       </section>
 
-      {}
+      {/* Filter section */}
       <section className="relative z-10 py-8">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -123,7 +111,6 @@ const EventsPage = () => {
             className="flex flex-wrap gap-3 justify-center mb-12"
           >
             {eventTypes.map((type) => (
-<<<<<<< Updated upstream
               <motion.div key={type} variants={filterItem}>
                 <Button
                   variant={selectedType === type ? "default" : "outline"}
@@ -136,25 +123,12 @@ const EventsPage = () => {
                   {type}
                 </Button>
               </motion.div>
-=======
-              <Button
-                key={type}
-                variant={selectedType === type ? "default" : "outline"}
-                onClick={() => setSelectedType(type)}
-                className={cn(
-                  "px-6 py-2 rounded-full transition-all duration-300",
-                  selectedType === type && "scale-105",
-                )}
-              >
-                {type}
-              </Button>
->>>>>>> Stashed changes
             ))}
           </motion.div>
         </div>
       </section>
 
-      {}
+      {/* Events section */}
       <section className="relative z-10 py-16 px-4">
         <div className="container mx-auto">
           <motion.div
@@ -163,7 +137,6 @@ const EventsPage = () => {
             animate="show"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-<<<<<<< Updated upstream
             <AnimatePresence mode="wait">
               {filteredEvents.map((event, index) => (
                 <motion.div
@@ -184,55 +157,6 @@ const EventsPage = () => {
                       style={{ backgroundImage: `url(${event.image})` }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
-=======
-            {filteredEvents.map((event, index) => (
-              <motion.div key={index} variants={item}>
-                <div
-                  className={cn(
-                    "group relative h-full rounded-lg p-6",
-                    "bg-card/50 backdrop-blur-sm",
-                    "border border-primary/10",
-                    "transition-all duration-200 ease-out",
-                    "hover:border-primary/30 hover:bg-primary/5",
-                    "hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/5",
-                  )}
-                >
-                  <div className="relative z-10">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <span className="inline-block px-3 py-1 text-sm font-medium rounded-md bg-primary/10 text-primary mb-2">
-                          {event.type}
-                        </span>
-                        <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-200">
-                          {event.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="space-y-3 mb-4">
-                      <p className="text-base text-foreground/90">
-                        {event.date} • {event.time}
-                      </p>
-                      <p className="text-sm text-foreground/80">
-                        📍 {event.location}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {event.description}
-                      </p>
-                    </div>
-                    <Button
-                      variant="outline"
-                      className="w-full glass hover:bg-primary/5 hover:border-primary/30"
-                      asChild
-                    >
-                      <a
-                        href={event.rsvpLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        RSVP Now
-                      </a>
-                    </Button>
->>>>>>> Stashed changes
                   </div>
                   
                   <div className="p-6">
@@ -287,7 +211,7 @@ const EventsPage = () => {
         </div>
       </section>
 
-      {}
+      {/* Calendar section */}
       <section className="relative z-10 py-16 px-4 mb-16">
         <div className="container mx-auto">
           <motion.div
