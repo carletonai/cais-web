@@ -3,55 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CalendarIcon, MapPinIcon, ArrowRightIcon } from "lucide-react";
+import eventsData from "@/data/events.json";
 
 const eventTypes = ["All", "Workshop", "Panel", "Symposium"];
 
-const events = [
-  {
-    title: "Introduction to Machine Learning",
-    date: "March 15, 2024",
-    time: "5:30 PM - 7:30 PM",
-    location: "Tory Building 432",
-    description: "Learn the fundamentals of machine learning algorithms and their applications.",
-    type: "Workshop",
-    image: "/images/events/ml-workshop.jpg",
-    rsvpLink: "https://forms.google.com/...",
-    tags: ["beginner-friendly", "hands-on"]
-  },
-  {
-    title: "AI in Healthcare Panel Discussion",
-    date: "March 20, 2024",
-    time: "6:00 PM - 8:00 PM",
-    location: "River Building 2200",
-    description: "Industry experts discuss the impact of AI in modern healthcare.",
-    type: "Panel",
-    image: "/images/events/healthcare-panel.jpg",
-    rsvpLink: "https://forms.google.com/...",
-    tags: ["healthcare", "industry-experts"]
-  },
-  {
-    title: "Neural Networks Deep Dive",
-    date: "March 25, 2024",
-    time: "5:00 PM - 7:00 PM",
-    location: "Herzberg Labs 3422",
-    description: "Advanced workshop on neural network architectures and implementation.",
-    type: "Workshop",
-    image: "/images/events/neural-networks.jpg",
-    rsvpLink: "https://forms.google.com/...",
-    tags: ["advanced", "technical"]
-  },
-  {
-    title: "AI Ethics Symposium",
-    date: "April 5, 2024",
-    time: "4:00 PM - 6:00 PM",
-    location: "Richcraft Hall 2228",
-    description: "Join us for a discussion on ethical considerations in AI development.",
-    type: "Symposium",
-    image: "/images/events/ethics-symposium.jpg",
-    rsvpLink: "https://forms.google.com/...",
-    tags: ["ethics", "discussion"]
-  }
-];
+const events = eventsData.events;
 
 const container = {
   hidden: { opacity: 0 },
@@ -83,12 +39,12 @@ const EventsPage = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Background Effects */}
+      {}
       <div className="absolute inset-0 bg-glow opacity-30" />
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-background" />
 
-      {/* Hero Section with Parallax */}
+      {}
         <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_65%)] opacity-20" />
         <motion.div
@@ -116,7 +72,7 @@ const EventsPage = () => {
         </motion.div>
         </section>
 
-      {/* Filter Section */}
+      {}
       <section className="relative z-10 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-3 justify-center mb-12">
@@ -137,7 +93,7 @@ const EventsPage = () => {
         </div>
       </section>
 
-      {/* Events Grid */}
+      {}
       <section className="relative z-10 py-16 px-4">
         <div className="container mx-auto">
           <motion.div
@@ -146,7 +102,7 @@ const EventsPage = () => {
             animate="show"
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {events.map((event, index) => (
+            {filteredEvents.map((event, index) => (
               <motion.div key={index} variants={item}>
                 <div
                   className={cn(
@@ -197,7 +153,7 @@ const EventsPage = () => {
         </div>
       </section>
 
-      {/* Calendar Section */}
+      {}
       <section className="relative z-10 py-16 px-4 mb-16">
         <div className="container mx-auto">
           <motion.div
