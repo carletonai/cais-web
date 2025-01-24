@@ -18,7 +18,7 @@
     "format": "prettier --write .",
     "fix": "pnpm lint && pnpm format",
     "predeploy": "pnpm fix && pnpm build",
-    "push": "pnpm predeploy && npx gh-pages -d dist"
+    "push": "git add . && git commit -m \"Update website content\" && git push origin master"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.1.1",
@@ -29,8 +29,8 @@
     "@radix-ui/react-slot": "^1.1.1",
     "framer-motion": "^11.17.0",
     "next": "^15.1.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.1",
     "react-social-icons": "^6.18.0"
@@ -100,8 +100,8 @@
       "email": "tarekibrahim3@cmail.carleton.ca"
     },
     {
-      "name": "Author Two",
-      "email": "author2@example.com"
+      "name": "Angus Bailey",
+      "email": "AngusBailey@cmail.carleton.ca"
     },
     {
       "name": "Author Two",
