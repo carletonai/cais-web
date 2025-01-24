@@ -11,36 +11,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import eventsData from "@/data/events.json";
 
-const events = [
-  {
-    title: "Introduction to Machine Learning",
-    date: "March 15, 2024",
-    time: "5:30 PM - 7:30 PM",
-    location: "Tory Building 432",
-    description:
-      "Learn the fundamentals of machine learning algorithms and their applications.",
-    type: "Workshop",
-  },
-  {
-    title: "AI in Healthcare Panel Discussion",
-    date: "March 20, 2024",
-    time: "6:00 PM - 8:00 PM",
-    location: "River Building 2200",
-    description:
-      "Industry experts discuss the impact of AI in modern healthcare.",
-    type: "Panel",
-  },
-  {
-    title: "Neural Networks Deep Dive",
-    date: "March 25, 2024",
-    time: "5:00 PM - 7:00 PM",
-    location: "Herzberg Labs 3422",
-    description:
-      "Advanced workshop on neural network architectures and implementation.",
-    type: "Workshop",
-  },
-];
+// Sort events by date and get the latest 3
+const events = eventsData.events
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3);
 
 const container = {
   hidden: { opacity: 0 },
@@ -100,41 +76,43 @@ export function LatestEvents() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {events.map((event, index) => (
-            <motion.div key={index} variants={item}>
-              <div
-                className={cn(
-                  "group relative h-full rounded-lg p-5 sm:p-6",
-                  "bg-card/50 backdrop-blur-sm",
-                  "border border-primary/10",
-                  "transition-all duration-200 ease-out",
-                  "hover:border-primary/30 hover:bg-primary/5",
-                  "hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/5",
-                )}
-              >
-                <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-3">
+            <motion.div key={event.id} variants={item}>
+              <Card className="bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-colors duration-200">
+                <CardHeader>
+                  <div className="flex justify-between items-start gap-4">
                     <div>
-                      <span className="inline-block px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary mb-2">
-                        {event.type}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors duration-200">
+                      <CardTitle className="text-lg font-semibold mb-1">
                         {event.title}
-                      </h3>
+                      </CardTitle>
+                      <CardDescription>
+                        {event.date} • {event.time}
+                      </CardDescription>
                     </div>
+                    <span
+                      className={cn(
+                        "px-2 py-1 rounded text-xs font-medium",
+                        event.type === "Workshop"
+                          ? "bg-blue-500/10 text-blue-500"
+                          : event.type === "Panel"
+                          ? "bg-purple-500/10 text-purple-500"
+                          : "bg-green-500/10 text-green-500"
+                      )}
+                    >
+                      {event.type}
+                    </span>
                   </div>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-sm sm:text-base text-foreground/90">
-                      {event.date} • {event.time}
-                    </p>
-                    <p className="text-sm text-foreground/80">
-                      {event.location}
-                    </p>
-                  </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
                     {event.description}
                   </p>
-                </div>
-              </div>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-sm text-muted-foreground">
+                    📍 {event.location}
+                  </p>
+                </CardFooter>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
