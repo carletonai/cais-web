@@ -220,4 +220,9 @@
       transparent
     );
   }
+
+  /* Resolves issues for team.tsx */
+  a{
+    pointer-events: auto;
+  }
 }

@@ -1,7 +1,9 @@
 import React from "react";
 import {motion} from "framer-motion";
 import { teamData } from "@/app/team/data";
+import { Button } from "@/components/ui/button";
 import {BackgroundBeams} from "@/components/background-beams";
+import team from "@/app/team/team";
 
 
 
@@ -12,21 +14,24 @@ const TeamPage = () => {
         name: string;
         description: string;
         title: string;
+        linkedinURL: string;
         linkedin: string;
+        githubURL: string;
         github: string;
+
     }
 
-    const DisplayMembers: React.FC<DisplayMembersProps> = ({image,name,description,title,linkedin,github}) => {
+    const DisplayMembers: React.FC<DisplayMembersProps> = ({image,name,description,title,linkedin,linkedinURL,github,githubURL}) => {
         return (
 
-            <div className="">
+            <div className="relative z-10">
                 {/*[url('/cais-web/gradient.png')] */}
-                <div className="bg-[#1c1f29] bg-cover lg:h-[500px] lg:w-auto rounded-3xl md:h-[350px] md:w-[250px] h-[250px] flex justify-center ">
+                <div className="bg-[#1c1f29] bg-opacity-40 hover:bg-opacity-60 bg-cover lg:h-[500px] lg:w-auto rounded-3xl md:h-[350px] md:w-[250px] h-[250px] flex justify-center ">
                     <div className="p-8 text-center">
                         <div className="person-box">
                             <div>
                                 <img
-                                    className="lg:h-52 lg:w-52 md:h-32 md:w-32 h-24 w-24 rounded-full border-4 border-white border-x-14 border-b-red-500  mx-auto object-cover"
+                                    className=" lg:h-52 lg:w-52 md:h-32 md:w-32 h-24 w-24 rounded-full border-4 border-white border-x-14 border-glow border-b-red-500  mx-auto object-cover"
                                     src={image}
                                     alt="Description of the image"
                                 />
@@ -43,21 +48,25 @@ const TeamPage = () => {
                                 </p>
                                 */}
                                 <p className="flex space-x-2 justify-center">
-                                    <a href={github} target="_blank" rel="noopener noreferrer">
-                                        <img
-                                            className="h-auto md:w-12 lg:w-16 sm:"
-                                            src={github}
-                                            alt="GitHub"
-                                        />
-                                    </a>
+                                    <Button className="w-auto lg:h-16 bg-transparent">
+                                        <a href={githubURL} target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                className="h-auto md:w-12 lg:w-16 sm:"
+                                                src={github}
+                                                alt="Github"
+                                            />
+                                        </a>
+                                    </Button>
 
-                                    <a href={github} target="_blank" rel="noopener noreferrer">
-                                        <img
-                                            className="h-auto md:w-12 lg:w-16 sm:"
-                                            src={linkedin}
-                                            alt="GitHub"
-                                        />
-                                    </a>
+                                    <Button className="w-auto lg:h-16 bg-transparent">
+                                        <a href={linkedinURL} target="_blank" rel="noopener noreferrer">
+                                            <img
+                                                className="h-auto md:w-12 lg:w-16 sm:"
+                                                src={linkedin}
+                                                alt="Linkedin"
+                                            />
+                                        </a>
+                                    </Button>
                                 </p>
 
                             </div>
@@ -76,7 +85,7 @@ const TeamPage = () => {
                 {/* Executives */}
                 <h1 className="text-4xl font-bold mb-6">Executives</h1>
                 <div className="grid lg:grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    {teamData.slice(0, 3).map((member, index) => (
+                    {teamData.slice(0, 7).map((member, index) => (
                         <motion.div
                         key={member.name}
                         whileHover={{y:-20}}
@@ -96,8 +105,10 @@ const TeamPage = () => {
                                     name={member.name}
                                     description={member.description}
                                     title={member.title}
+                                    linkedinURL={member.linkedinURL}
                                     linkedin={member.linkedin}
                                     github={member.github}
+                                    githubURL={member.githubURL}
                                 />
                             </motion.div>
                         </motion.div>
@@ -107,7 +118,7 @@ const TeamPage = () => {
                 {/* Development */}
                 <h1 className="text-4xl font-bold mb-6 pt-32">Development</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    {teamData.slice(3, 6).map((member, index) => (
+                    {teamData.slice(7, 11).map((member, index) => (
                         <motion.div
                             key={member.name}
                             whileHover={{y:-20}}
@@ -127,7 +138,9 @@ const TeamPage = () => {
                                     name={member.name}
                                     description={member.description}
                                     title={member.title}
+                                    linkedinURL={member.linkedinURL}
                                     linkedin={member.linkedin}
+                                    githubURL={member.githubURL}
                                     github={member.github}
                                 />
                             </motion.div>
