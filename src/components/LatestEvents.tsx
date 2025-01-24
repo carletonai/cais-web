@@ -1,16 +1,8 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { CalendarIcon, MapPinIcon, ArrowRightIcon } from "lucide-react";
 import eventsData from "@/data/events.json";
 
 // Sort events by date and get the latest 3
@@ -23,19 +15,21 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: [0.25, 0.1, 0.25, 1.0],
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
     },
   },
 };
@@ -73,46 +67,71 @@ export function LatestEvents() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {events.map((event, index) => (
-            <motion.div key={event.id} variants={item}>
-              <Card className="bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-colors duration-200">
-                <CardHeader>
-                  <div className="flex justify-between items-start gap-4">
-                    <div>
-                      <CardTitle className="text-lg font-semibold mb-1">
-                        {event.title}
-                      </CardTitle>
-                      <CardDescription>
-                        {event.date} • {event.time}
-                      </CardDescription>
-                    </div>
-                    <span
-                      className={cn(
-                        "px-2 py-1 rounded text-xs font-medium",
-                        event.type === "Workshop"
-                          ? "bg-blue-500/10 text-blue-500"
-                          : event.type === "Panel"
-                          ? "bg-purple-500/10 text-purple-500"
-                          : "bg-green-500/10 text-green-500"
-                      )}
-                    >
-                      {event.type}
-                    </span>
+          {events.map((event) => (
+            <motion.div
+              key={event.id}
+              variants={item}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { type: "spring", stiffness: 400, damping: 10 }
+              }}
+              className="group relative bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors"
+            >
+              <div className="aspect-video relative overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
+                  style={{ backgroundImage: `url(${event.image})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                  <span className="inline-flex items-center gap-1">
+                    <CalendarIcon className="w-4 h-4" />
+                    {event.date}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <MapPinIcon className="w-4 h-4" />
+                    {event.location}
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {event.title}
+                </h3>
+                
+                <p className="text-muted-foreground mb-4 line-clamp-2">
+                  {event.description}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    {event.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    {event.description}
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <p className="text-sm text-muted-foreground">
-                    📍 {event.location}
-                  </p>
-                </CardFooter>
-              </Card>
+                  
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="group/btn"
+                    asChild
+                  >
+                    <a href={event.rsvpLink} target="_blank" rel="noopener noreferrer">
+                      RSVP
+                      <ArrowRightIcon className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
