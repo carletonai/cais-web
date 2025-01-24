@@ -15,6 +15,7 @@ exports[`renders TeamPage correctly 1`] = `
     >
       Meet the dedicated members of CAIS's.
     </p>
+    <div />
   </div>
 </DocumentFragment>
 `;
