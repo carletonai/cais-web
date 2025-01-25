@@ -2,56 +2,40 @@ import React from "react";
 import TeamDisplay from "@/components/TeamDisplay";
 import { motion } from "framer-motion";
 
-
-const animations = {
-    container: {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: { staggerChildren: 0.2 },
-        },
-    },
-    item: {
-        hidden: { opacity: 0, y: 10 },
-        show: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5, ease: "easeOut" },
-        },
-    },
-};
-
 const TeamPage = () => {
-    return (
-        <div className="min-h-screen lg:px-14  relative overflow-hidden">
-            <div className="absolute inset-0 bg-glow opacity-40" />
-            <div className="absolute inset-0 bg-grid opacity-15" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-            <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+  return (
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {}
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/0 via-red/10 to-background pointer-events-none" />
 
+      {}
+      <div className="relative z-10 px-6 lg:px-14 pt-20 pb-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-4xl mx-auto"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 mb-6">
+            Meet Our{" "}
+            <span className="text-primary font-mono inline-block mx-2 drop-shadow-[0_0_8px_rgba(226,56,63,0.3)]">
+              Team
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+            The passionate individuals driving innovation and fostering AI
+            education at Carleton University
+          </p>
+        </motion.div>
+      </div>
 
-            <motion.div variants={animations.item}>
-                <h1 className="p-8 text-center text-4xl font-bold tracking-tight sm:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                    Carleton{" "}
-                    <span className="text-primary font-mono inline-block mx-2 drop-shadow-[0_0_8px_rgba(226,56,63,0.3)]">
-                ΛI
-              </span>{" "}
-                    Society
-
-                    <span className="text-primary pl-3 inline-block mx-2 drop-shadow-[0_0_8px_rgba(226,56,63,0.3)]">{" "}
-                    Team
-                </span>
-                </h1>
-
-
-            </motion.div>
-            <TeamDisplay />
-
-        </div>
-    )
-}
-
+      {}
+      <div className="relative z-10">
+        <TeamDisplay />
+      </div>
+    </div>
+  );
+};
 
 export default TeamPage;
