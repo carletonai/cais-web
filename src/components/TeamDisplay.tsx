@@ -158,11 +158,6 @@ const TeamDisplay = () => {
           members={executives}
           startIndex={0}
         />
-        <TeamSection
-          title="Development Team"
-          members={developers}
-          startIndex={executives.length}
-        />
       </div>
     </div>
   );
