@@ -1,0 +1,72 @@
+/* Custom scrollbar styles */
+@layer utilities {
+  .terminal-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(136, 136, 136, 0.5) rgba(255, 255, 255, 0.05);
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.5);
+    border-radius: 3px;
+  }
+
+  .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .matrix-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 0, 0.4) rgba(0, 0, 0, 0.1);
+  }
+
+  .matrix-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .matrix-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .matrix-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.4) !important;
+    border-radius: 3px;
+  }
+
+  .matrix-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.6) !important;
+  }
+}
+
+@property --spinner-char {
+  syntax: '<string>';
+  initial-value: "⠋";
+  inherits: false;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 1ch;
+  height: 1em;
+  animation: spinner 0.8s steps(8) infinite;
+}
+
+@keyframes spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner::before {
+  content: var(--spinner-char);
+} 
