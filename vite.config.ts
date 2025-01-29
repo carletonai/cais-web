@@ -5,7 +5,7 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [svgr(), react()],
-  base: "/cais-web/",
+  base: "/",
   css: {
     postcss: "./postcss.config.cjs",
   },
