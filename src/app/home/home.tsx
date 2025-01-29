@@ -14,7 +14,7 @@ const HomePage = () => {
 
       <Hero
         description="A student club at Carleton University for anyone interested in AI and machine learning. Join us to learn, build projects, and meet others who share your interests."
-        logoSrc="/cais-web/header-club.png"
+        logoSrc="/header-club.png"
         primaryAction={{
           text: "See Events",
           to: "/events",

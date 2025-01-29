@@ -1,60 +1,60 @@
 {
   "members": [
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Awwab Mahdi",
       "description": "Give me a job please.",
       "title": "Co-President",
       "linkedinURL": "https://www.linkedin.com/in/username1",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     },
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Executive 2",
       "description": "Executive member 2025",
       "title": "Co-President",
       "linkedinURL": "https://www.linkedin.com/in/username2",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     },
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Executive 3",
       "description": "Executive member 2025",
       "title": "VP Academics",
       "linkedinURL": "https://www.linkedin.com/in/username3",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     },
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Executive 4",
       "description": "Executive member 2025",
       "title": "VP Academics",
       "linkedinURL": "https://www.linkedin.com/in/username4",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     },
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Executive 5",
       "description": "Executive member 2025",
       "title": "VP Events",
       "linkedinURL": "https://www.linkedin.com/in/username5",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     },
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Executive 6",
       "description": "Executive member 2025",
       "title": "VP Finance",
       "linkedinURL": "https://www.linkedin.com/in/username6",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     },
     {
-      "image": "/cais-web/stockIcon.jpg",
+      "image": "/stockIcon.jpg",
       "name": "Executive 7",
       "description": "Executive member 2025",
       "title": "VP Community",
       "linkedinURL": "https://www.linkedin.com/in/username7",
-      "linkedin": "/cais-web/linkedin.svg"
+      "linkedin": "/linkedin.svg"
     }
   ]
 }

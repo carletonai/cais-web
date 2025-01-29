@@ -1,10 +1,10 @@
 {
   "name": "cais-web",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "description": "A project for CAIS club website.",
   "type": "module",
-  "homepage": "https://carletonai.github.io/cais-web",
+  "homepage": "https://carletonai.com",
   "scripts": {
     "serve": "vite preview",
     "dev": "vite",
