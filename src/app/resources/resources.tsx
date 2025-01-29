@@ -583,10 +583,30 @@ const Resources = () => {
         "links",
         "courses",
         "projects",
+        "events",
+        "team",
         "theme",
+        "ascii",
+        "matrix",
+        "coffee",
+        "quote",
+        "stats",
+        "game",
+        "hack",
+        "weather",
+        "shortcuts",
+        "shutdown",
+        "join",
+        "contact",
+        "contribute",
+        "event",
+        "rsvp",
+        "project",
       ];
+
+      const input = currentInput.toLowerCase();
       const matchingCommands = availableCommands.filter((cmd) =>
-        cmd.startsWith(currentInput.toLowerCase())
+        cmd.startsWith(input)
       );
 
       if (matchingCommands.length === 1) {
