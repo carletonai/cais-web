@@ -5,22 +5,22 @@ import { cn } from "@/lib/utils";
 
 const stats = [
   {
-    number: "500+",
+    number: "50+",
     label: "Members",
     description: "Active students in our community",
   },
   {
-    number: "20+",
+    number: "5+",
     label: "Events",
     description: "Workshops and meetups per year",
   },
   {
-    number: "15+",
+    number: "1",
     label: "Projects",
     description: "Collaborative AI projects completed",
   },
   {
-    number: "10+",
+    number: "2",
     label: "Partners",
     description: "Industry and academic partnerships",
   },
