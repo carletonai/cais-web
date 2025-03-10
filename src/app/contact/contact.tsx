@@ -16,7 +16,7 @@ const ContactPage = () => (
       </a>
     </div>
     <div>
-      <SocialIcon url="https://instagram.com" />
+      <SocialIcon url="https://www.instagram.com/carletonaisociety/" />
       <a
         className="Instagram-link"
         target="_blank"
@@ -26,7 +26,7 @@ const ContactPage = () => (
         Instagram
       </a>
       <a> </a>
-      <SocialIcon url="https://discord.com" />
+      <SocialIcon url="https://discord.gg/nsvsMJaSRJ" />
       <a
         className="Discord-link"
         target="_blank"
@@ -36,7 +36,7 @@ const ContactPage = () => (
         Discord
       </a>
       <a> </a>
-      <SocialIcon url="https://linkedin.com" />
+      <SocialIcon url="https://www.linkedin.com/company/carleton-ai" />
       <a
         className="Linkedin-link"
         target="_blank"
@@ -46,7 +46,7 @@ const ContactPage = () => (
         Linkedin
       </a>
       <a> </a>
-      <SocialIcon url="https://youtube.com" />
+      <SocialIcon url="https://www.youtube.com/channel/UCWKRnTa68hlHrW6WYCgCNaw" />
       <a
         className="Youtube-link"
         target="_blank"
