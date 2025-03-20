@@ -3,57 +3,65 @@
     {
       "image": "/stockIcon.jpg",
       "name": "Awwab Mahdi",
-      "description": "Give me a job please.",
+      "description": "Current obsession: Lord of the Mysteries",
       "title": "Co-President",
-      "linkedinURL": "https://www.linkedin.com/in/username1",
+      "linkedinURL": "https://www.linkedin.com/in/awwabm",
       "linkedin": "/linkedin.svg"
     },
     {
       "image": "/stockIcon.jpg",
-      "name": "Executive 2",
-      "description": "Executive member 2025",
+      "name": "Tarek Sallam",
+      "description": "Current obsession: Deep Learning",
       "title": "Co-President",
-      "linkedinURL": "https://www.linkedin.com/in/username2",
+      "linkedinURL": "https://www.linkedin.com/in/tareksallam",
       "linkedin": "/linkedin.svg"
     },
     {
       "image": "/stockIcon.jpg",
-      "name": "Executive 3",
-      "description": "Executive member 2025",
+      "name": "Diego Fuentes",
+      "description": "Current obsession: Holistic Health and Wellness",
       "title": "VP Academics",
-      "linkedinURL": "https://www.linkedin.com/in/username3",
+      "linkedinURL": "https://www.linkedin.com/in/diego-fuentesa",
       "linkedin": "/linkedin.svg"
     },
     {
       "image": "/stockIcon.jpg",
-      "name": "Executive 4",
-      "description": "Executive member 2025",
-      "title": "VP Academics",
-      "linkedinURL": "https://www.linkedin.com/in/username4",
-      "linkedin": "/linkedin.svg"
-    },
-    {
-      "image": "/stockIcon.jpg",
-      "name": "Executive 5",
-      "description": "Executive member 2025",
-      "title": "VP Events",
-      "linkedinURL": "https://www.linkedin.com/in/username5",
-      "linkedin": "/linkedin.svg"
-    },
-    {
-      "image": "/stockIcon.jpg",
-      "name": "Executive 6",
-      "description": "Executive member 2025",
-      "title": "VP Finance",
-      "linkedinURL": "https://www.linkedin.com/in/username6",
-      "linkedin": "/linkedin.svg"
-    },
-    {
-      "image": "/stockIcon.jpg",
-      "name": "Executive 7",
-      "description": "Executive member 2025",
+      "name": "Kierra Blankespoor",
+      "description": "Current Obsession: Dinner rolls",
       "title": "VP Community",
-      "linkedinURL": "https://www.linkedin.com/in/username7",
+      "linkedinURL": "https://www.linkedin.com/in/kierra-blankespoor",
+      "linkedin": "/linkedin.svg"
+    },
+    {
+      "image": "/stockIcon.jpg",
+      "name": "Vaibhav Panchanadam",
+      "description": "Current obsession: blue by young kai",
+      "title": "VP Events",
+      "linkedinURL": "https://www.linkedin.com/in/vaibhav-panchanadam",
+      "linkedin": "/linkedin.svg"
+    },
+    {
+      "image": "/stockIcon.jpg",
+      "name": "Mohamed Bouslama",
+      "description": "Current obsession: Game dev",
+      "title": "VP Events",
+      "linkedinURL": "https://www.linkedin.com/in/mohamed-bouslama-2092892b1",
+      "linkedin": "/linkedin.svg"
+    },
+    {
+      "image": "/stockIcon.jpg",
+      "name": "Tarek Ibrahim",
+      "description": "Current obsession: Go",
+      "title": "VP Projects and Technology",
+      "linkedinURL": "https://www.linkedin.com/in/im-tarek",
+      "linkedin": "/linkedin.svg"
+    },
+    {
+      "image": "/stockIcon.jpg",
+      "name": "Zeeshan Jahangir",
+      "description": "Current obsession: Collecting Fake Internet Points",
+      "title": "VP Finance",
+      "linkedinURL": "https://www.linkedin.com/in/zeeshan-jahangir-604ba762",
       "linkedin": "/linkedin.svg"
     }
   ]
