@@ -31,12 +31,12 @@
       "description": "Learn the fundamentals of artificial intelligence, focusing on the history, different types of algorithms, and how you can learn about it.",
       "type": "Workshop",
       "image": "/assets/events/ml-workshop.jpg",
-      "tags": ["beginner-friendly", "informative"]
+      "tags": ["beginner-friendly", "conceptual"]
     },
     {
       "id": "4",
       "title": "CUHacking AI Workshop",
-      "date": "2024-03-15",
+      "date": "2025-03-15",
       "time": "2:00 PM - 3:00 PM",
       "location": "Richcraft Hall 1200",
       "description": "Hackathon workshop on how to implement Ollama and HuggingFace models in your projects. Also, mentorship access to hackathon participants.",
@@ -46,11 +46,23 @@
     },
     {
       "id": "5",
-      "title": "Applications of AI",
-      "date": "2024-03-20",
-      "time": "5:30 PM - 7:30 PM",
-      "location": "Herzberg Labs 3422",
+      "title": "Build Your Own Neural Network",
+      "date": "2025-03-20",
+      "time": "6:00 PM - 7:00 PM",
+      "location": "Canal Building 2400",
       "description": "Beginner workshop on implementing neural networks and a demo on how to build your own model.",
+      "type": "Workshop",
+      "image": "/assets/events/neural-networks.jpg",
+      "rsvpLink": "https://forms.google.com/...",
+      "tags": ["hands-on", "technical"]
+    },
+    {
+      "id": "6",
+      "title": "Using AI APIs",
+      "date": "2025-04-02",
+      "time": "6:00 PM - 7:00 PM",
+      "location": "Tory Building 431",
+      "description": "Learn how to use AI APIs to implement AI in your projects.",
       "type": "Workshop",
       "image": "/assets/events/neural-networks.jpg",
       "rsvpLink": "https://forms.google.com/...",
